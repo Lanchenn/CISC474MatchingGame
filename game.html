@@ -1,3 +1,11 @@
+<!-- Notes on the current version -->
+<!-- the code currently used to randomly select/render card images
+      is currently populating each slot specifically. would be nice to
+      figure out how to turn into a loop, but for now, it works.
+
+      first row only has been implemented for now, but adding in the others
+      is simple copy-pasting, when the time comes.-->
+      
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +57,27 @@
 }
 </style>
 
+<script>
+var imagesArray = ["pauseBtn.png", "playBtn.png", "settingsWheel.png"];
+
+function displayImage(){
+    var num1 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas1.src = imagesArray[num1];
+    var num2 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas2.src = imagesArray[num2];
+    var num3 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas3.src = imagesArray[num3];
+    var num4 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas4.src = imagesArray[num4];
+}
+</script>
+
 </head>
 
 
-<body>
+<body onload="displayImage()">
+
+
 
 <div id="fullGameContainer" class="container-fluid">
 
@@ -69,10 +94,19 @@
   <div id="gameBoard">
 
     <div id="row1" class="row">
-      <div id="c1r1" class="col-xs-3"><div id="cardSpot">1</div></div>
-      <div id="c2r1" class="col-xs-3"><div id="cardSpot">2</div></div>
-      <div id="c3r1" class="col-xs-3"><div id="cardSpot">3</div></div>
-      <div id="c4r1" class="col-xs-3"><div id="cardSpot">4</div></div>
+      <div id="c1r1" class="col-xs-3">
+        <div id="cardSpot">
+          <img class="img-responsive" src="spacer.jpg" name="canvas1" id="t1"/>
+        </div>
+      </div>
+
+
+      <div id="c2r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas2" id="t1"/>
+    </div></div>
+      <div id="c3r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas3" id="t1"/>
+  </div></div>
+      <div id="c4r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas4" id="t1"/>
+  </div></div>
     </div>
 
     <div id="row2" class="row">
