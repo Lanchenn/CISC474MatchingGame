@@ -4,8 +4,16 @@
       figure out how to turn into a loop, but for now, it works.
 
       first row only has been implemented for now, but adding in the others
-      is simple copy-pasting, when the time comes.-->
-      
+      is simple copy-pasting, when the time comes.
+
+      will need a way to have exactly 2 of each (randomly selected) card.
+      can implement this by tracking how many cards exist in the current pattern,
+      running a for loop that many times, and updating a variable (probably primitive
+      array) 1 level of scope up. Within the loop we'd check this array by our
+      randomly generated number, and keep generating until we get one not in the
+      array. Not a great method for very high numbers, but more than fast enough
+      for our purposes :) -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,12 +71,36 @@ var imagesArray = ["pauseBtn.png", "playBtn.png", "settingsWheel.png"];
 function displayImage(){
     var num1 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas1.src = imagesArray[num1];
+
     var num2 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas2.src = imagesArray[num2];
+
     var num3 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas3.src = imagesArray[num3];
+
     var num4 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas4.src = imagesArray[num4];
+
+
+    var num5 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas5.src = imagesArray[num5];
+    var num6 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas6.src = imagesArray[num6];
+    var num7 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas7.src = imagesArray[num7];
+
+    var num8 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas8.src = imagesArray[num8];
+    var num9 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas9.src = imagesArray[num9];
+    var num10 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas10.src = imagesArray[num10];
+    var num11 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas11.src = imagesArray[num11];
+
+
+    var num12 = Math.floor(Math.random() * (imagesArray.length));
+    document.canvas12.src = imagesArray[num12];
 }
 </script>
 
@@ -100,7 +132,6 @@ function displayImage(){
         </div>
       </div>
 
-
       <div id="c2r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas2" id="t1"/>
     </div></div>
       <div id="c3r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas3" id="t1"/>
@@ -110,17 +141,25 @@ function displayImage(){
     </div>
 
     <div id="row2" class="row">
-      <div id="c1r2" class="col-xs-3"><div id="cardSpot">1</div></div>
-      <div id="c2r2" class="col-xs-3"><div id="cardSpot">2</div></div>
-      <div id="c3r2" class="col-xs-3"><div id="cardSpot">3</div></div>
-      <div id="c4r2" class="col-xs-3"><div id="cardSpot">4</div></div>
+      <div id="c1r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas5" id="t1"/>
+      </div></div>
+      <div id="c2r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas6" id="t1"/>
+      </div></div>
+      <div id="c3r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas7" id="t1"/>
+      </div></div>
+      <div id="c4r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas8" id="t1"/>
+      </div></div>
     </div>
 
     <div id="row3" class="row">
-      <div id="c1r3" class="col-xs-3"><div id="cardSpot">1</div></div>
-      <div id="c2r3" class="col-xs-3"><div id="cardSpot">2</div></div>
-      <div id="c3r3" class="col-xs-3"><div id="cardSpot">3</div></div>
-      <div id="c4r3" class="col-xs-3"><div id="cardSpot">4</div></div>
+      <div id="c1r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas9" id="t1"/>
+      </div></div>
+      <div id="c2r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas10" id="t1"/>
+      </div></div>
+      <div id="c3r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas11" id="t1"/>
+      </div></div>
+      <div id="c4r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas12" id="t1"/>
+      </div></div>
     </div>
 
   </div>
