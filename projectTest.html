@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Game_Titile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<style>
+#fullGameContainer{
+  height: 100vh;
+  background-color: pink;
+  padding-left: 0;
+  padding-right: 0;
+}
+#topMenu{
+  height: 8vh;
+  background-color: aqua;
+}
+#settingsWheelBtn{
+  height: 6vh;
+  margin-top: 1vh;
+  align: right;
+}
+#pausePlayBtn{
+  height: 6vh;
+  margin-top: 1vh;
+  align: right;
+}
+#menuItems{
+  margin-right:1vh;
+}
+#gameBoard{
+  padding-left: 0px;
+  margin-left:0;
+  height:90vh;
+  background: grey;
+}
+#cardSpot{
+  box-sizing: border-box;
+  border-style: groove;
+  height:28vh;
+  margin-right:0;
+  margin-top: 1.5vh;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div id="fullGameContainer" class="container-fluid">
+
+  <div id="topMenu" class="row">
+    <div id="menuItems" class = "pull-right">
+      <img id="settingsWheelBtn" src="settingsWheel.png"/>
+      <img id="pausePlayBtn" src="pauseBtn.png"/>
+    </div>
+  </div>
+
+
+
+
+  <div id="gameBoard">
+
+    <div id="row1" class="row">
+      <div id="c1r1" class="col-xs-3"><div id="cardSpot">1</div></div>
+      <div id="c2r1" class="col-xs-3"><div id="cardSpot">2</div></div>
+      <div id="c3r1" class="col-xs-3"><div id="cardSpot">3</div></div>
+      <div id="c4r1" class="col-xs-3"><div id="cardSpot">4</div></div>
+    </div>
+
+    <div id="row2" class="row">
+      <div id="c1r2" class="col-xs-3"><div id="cardSpot">1</div></div>
+      <div id="c2r2" class="col-xs-3"><div id="cardSpot">2</div></div>
+      <div id="c3r2" class="col-xs-3"><div id="cardSpot">3</div></div>
+      <div id="c4r2" class="col-xs-3"><div id="cardSpot">4</div></div>
+    </div>
+
+    <div id="row3" class="row">
+      <div id="c1r3" class="col-xs-3"><div id="cardSpot">1</div></div>
+      <div id="c2r3" class="col-xs-3"><div id="cardSpot">2</div></div>
+      <div id="c3r3" class="col-xs-3"><div id="cardSpot">3</div></div>
+      <div id="c4r3" class="col-xs-3"><div id="cardSpot">4</div></div>
+    </div>
+
+  </div>
+
+
+</div>
+
+</body>
+</html>

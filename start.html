@@ -3,14 +3,47 @@
   <head>
     <title>START PAGE</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="startJavaScript.js"></script>
   </head>
 
   <body>
 
     <div>
-      <!--h1><b>MATCHING</b></h1-->
-      <img src="http://de12.engine.flamingtext.com/netfu/tmp28007/coollogo_com-99651146.png"><!--alt="Smiley face" height="42" width="42"-->
-      <h1>CHOOSE MAP</h1>
+      <div>
+        <!--h1><b>MATCHING</b></h1-->
+        <img src="http://de12.engine.flamingtext.com/netfu/tmp28007/coollogo_com-99651146.png"><!--alt="Smiley face" height="42" width="42"-->
+
+        <!-- Trigger/Open The Modal -->
+        <button id="popUpButton" class="w3-circle instruction">&#10067;</button>
+        <!-- The Modal -->
+        <div id="modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close" id="close"></span><!--&times;-->
+              <h2>Instruction!</h2>
+            </div>
+            <div class="modal-body">
+              <p>The goal of the game is to pair the all cards inside the pattern</p>
+              <p>Simply by clicking two same cards will get scores</p>
+              <p>If you click on the different cards, both cards will flip over
+                and you have to click it again.</p>
+              <p>-------------- Simple Mode ------------- </p>
+              <p>When all the cards are paired, you WIN!</p>
+              <p>----------------------- Hard Mode ---------------------- </p>
+              <p>Once you click the wrong pair, your game time decrease.</p>
+              <p>When all the cards are paired, you WIN!</p>
+            </div>
+            <div class="modal-footer">
+              <h3>Good Luck & Have Fun!</h3>
+            </div>
+          </div>
+        </div>
+
+        <h1>CHOOSE MAP</h1>
+      </div>
 
       <div id = "firstb">
       </div>
