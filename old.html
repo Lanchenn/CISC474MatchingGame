@@ -3,9 +3,6 @@
       is currently populating each slot specifically. would be nice to
       figure out how to turn into a loop, but for now, it works.
 
-      first row only has been implemented for now, but adding in the others
-      is simple copy-pasting, when the time comes.
-
       will need a way to have exactly 2 of each (randomly selected) card.
       can implement this by tracking how many cards exist in the current pattern,
       running a for loop that many times, and updating a variable (probably primitive
@@ -21,9 +18,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
+
 
 
 <style>
@@ -123,7 +122,7 @@
 .card {
     width: 100%;
     height: 100%;
-    /*position: absolute;*/
+    position: absolute;
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
@@ -144,35 +143,35 @@
     text-align: center;
     font-weight: bold;
     font-size: 140px;
-    /*position: absolute;*/
+    position: absolute;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-/*.card .front {
+.card .front {
   background: red;
-}*/
+}
 
 .card .back {
-    /*background: blue;*/
+    background: blue;
     -webkit-transform: rotateY( 180deg );
     -moz-transform: rotateY( 180deg );
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
 
-.flipped {
+.card.flipped {
     -webkit-transform: rotateY( 180deg );
     -moz-transform: rotateY( 180deg );
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
-#row1, #row2, #row3{
-  height: 30vh;
-}
+
 </style>
+
+
 
 <script>
 var imagesArray = ["pauseBtn.png", "playBtn.png", "settingsWheel.png"];
@@ -210,12 +209,12 @@ function displayImage(){
 
     var num12 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas12.src = imagesArray[num12];
+}
+</script>
 
-// can we delete this?
-    // var loimg = document.getElementsByName('back');
-    // $(loimg).each(function() {
-    //   $(this).hide();
-    // });
+<script>
+function flip() {
+    $(this).toggleClass('card flipped');
 }
 </script>
 
@@ -224,6 +223,8 @@ function displayImage(){
 
 <body onload="displayImage()">
 
+
+<div id="outermostDiv">
 <div id="fullGameContainer" class="container-fluid">
 
   <div id="topMenu" class="row">
@@ -234,130 +235,80 @@ function displayImage(){
   </div>
 
 
+
+
+
+
+
   <div id="gameBoard">
 
-<!-- row 1 cards -->
     <div id="row1" class="row">
 
-      <!-- card 1 -->
-      <div id="c1r1" class="col-xs-3">
-        <div id="cardSpot" class="card">
-          <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas1" /></div>
-        </div>
-      </div>
+            <div id="c1r1" class="col-xs-3">
+              <!-- <div id="cardSpot"> -->
 
-      <!-- card 2 -->
+                <button onclick="flip()">
+                <!-- <div class="container"> -->
+                <div class="card">
+
+                <div class="front"><img class="img-responsive" src="spacer.jpg" name="canvas3" id="t3"/></div>
+                <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas3" id="t4"/></div>
+
+              <!-- </div> -->
+            </div>
+          </button>
+              <!-- </div> -->
+            </div>
+
       <div id="c2r1" class="col-xs-3">
+        <!-- <div id="cardSpot"> -->
 
-        <div id="cardSpot" class="card">
-          <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas2" /></div>
-        </div>
+          <button onclick="flip2()">
+          <!-- <div class="container"> -->
+          <div class="card">
+
+          <div class="front"><img class="img-responsive" src="spacer.jpg" name="canvas3" id="t3"/></div>
+          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas3" id="t4"/></div>
+
+        <!-- </div> -->
+      </div>
+    </button>
+        <!-- </div> -->
       </div>
 
-      <!-- card 3 -->
-      <div id="c3r1" class="col-xs-3">
 
-        <div id="cardSpot" class="card">
-          <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas3" /></div>
-      </div>
-    </div>
-    <!-- card 3 -->
-    <div id="c4r1" class="col-xs-3">
 
-      <div id="cardSpot" class="card">
-        <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas4"/></div>
+      <!-- <div id="c3r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas3" id="t1"/>
+  </div></div>
+      <div id="c4r1" class="col-xs-3"><div id="cardSpot">  <img class="img-responsive" src="spacer.jpg" name="canvas4" id="t1"/>
+  </div></div>
     </div>
+
+    <div id="row2" class="row">
+      <div id="c1r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas5" id="t1"/>
+      </div></div>
+      <div id="c2r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas6" id="t1"/>
+      </div></div>
+      <div id="c3r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas7" id="t1"/>
+      </div></div>
+      <div id="c4r2" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas8" id="t1"/>
+      </div></div>
+    </div>
+
+    <div id="row3" class="row">
+      <div id="c1r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas9" id="t1"/>
+      </div></div>
+      <div id="c2r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas10" id="t1"/>
+      </div></div>
+      <div id="c3r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas11" id="t1"/>
+      </div></div>
+      <div id="c4r3" class="col-xs-3"><div id="cardSpot"><img class="img-responsive" src="spacer.jpg" name="canvas12" id="t1"/>
+      </div></div>
+    </div> -->
+
   </div>
-</div> <!-- end row 1 -->
-
-<!-- row 2 cards -->
-  <div id="row2" class="row">
-
-    <!-- card 1 -->
-    <div id="c1r2" class="col-xs-3">
-      <div id="cardSpot" class="card">
-        <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas5" /></div>
-      </div>
-    </div>
-
-    <!-- card 2 -->
-    <div id="c2r2" class="col-xs-3">
-
-      <div id="cardSpot" class="card">
-        <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas6" /></div>
-      </div>
-    </div>
 
 
-    <!-- card 3 -->
-        <div id="c3r2" class="col-xs-3">
-          <div id="cardSpot" class="card">
-            <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas7" /></div>
-        </div>
-      </div>
-
-      <!-- card 4 -->
-      <div id="c4r2" class="col-xs-3">
-
-        <div id="cardSpot" class="card">
-          <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas8" /></div>
-        </div>
-      </div>
-
-  </div> <!-- end row 2 -->
-
-  <!-- row 3 cards -->
-      <div id="row3" class="row">
-
-        <!-- card 1 -->
-        <div id="c1r3" class="col-xs-3">
-          <div id="cardSpot" class="card">
-            <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas9" /></div>
-          </div>
-        </div>
-
-        <!-- card 2 -->
-        <div id="c2r3" class="col-xs-3">
-
-          <div id="cardSpot" class="card">
-            <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas10" /></div>
-          </div>
-        </div>
-
-        <!-- card 3 -->
-        <div id="c3r3" class="col-xs-3">
-
-          <div id="cardSpot" class="card">
-            <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas11" /></div>
-        </div>
-      </div>
-      
-      <!-- card 3 -->
-      <div id="c4r3" class="col-xs-3">
-
-        <div id="cardSpot" class="card">
-          <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="spacer.jpg" name="canvas12"/></div>
-      </div>
-    </div>
-  </div> <!-- end row 3 -->
-
-
-
-</div> <!-- end gameBoard-->
-
-</div> <!-- end fullGameContainer -->
 
 </body>
 </html>
