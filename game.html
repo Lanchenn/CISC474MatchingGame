@@ -81,6 +81,7 @@
 }
 #timer{
   padding-left: 2vh;
+  position: absolute;
 }
 #menuItems{
   margin-right:1vh;
@@ -149,17 +150,17 @@
 var count = 30;
 var counter = setInterval(timer, 1000);
 
-function timer()
-{
-  count=count-1;
-  if (count < 0)
-  {
-    clearInterval(counter);
-     alert('done');
-     return;
-  }
-  document.getElementById("timer").innerHTML=count + " seconds"; // watch for spelling
-}
+// function timer()
+// {
+//   count=count-1;
+//   if (count < 0)
+//   {
+//     clearInterval(counter);
+//      alert('done');
+//      return;
+//   }
+//   document.getElementById("timer").innerHTML=count + " seconds"; // watch for spelling
+// }
 
 var imagesArray = ["images/abstract/abstract_1.png",
                   "images/abstract/abstract_2.png",
