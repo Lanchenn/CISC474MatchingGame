@@ -133,14 +133,21 @@
 /*note - not using ".row" below because we need space in top row*/
 #row1, #row2, #row3{
   height: 30vh;
+  color: white;
 }
 .img-responsive{
     height: 30vh;
+    color: white;
 }
 </style>
 
 <script>
-var imagesArray = ["pauseBtn.png", "playBtn.png", "settingsWheel.png"];
+var imagesArray = ["images/abstract/abstract_1.png",
+                  "images/abstract/abstract_2.png",
+                  "images/abstract/abstract_3.png",
+                  "images/abstract/abstract_4.png",
+                  "images/abstract/abstract_5.png",
+                  "images/abstract/abstract_6.png"];
 
 function displayImage(){
     var num1 = Math.floor(Math.random() * (imagesArray.length));

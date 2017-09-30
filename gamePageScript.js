@@ -1,3 +1,6 @@
+// This javascript is about the popup window in game page, which
+// included music, mute and help button.
+
 function gamePageModal(){
 // Get the modal
   var modal = document.getElementById('modal');
