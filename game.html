@@ -79,6 +79,9 @@
   margin-top: 1vh;
   align: right;
 }
+#timer{
+  padding-left: 2vh;
+}
 #menuItems{
   margin-right:1vh;
 }
@@ -142,6 +145,22 @@
 </style>
 
 <script>
+
+var count = 30;
+var counter = setInterval(timer, 1000);
+
+function timer()
+{
+  count=count-1;
+  if (count < 0)
+  {
+    clearInterval(counter);
+     alert('done');
+     return;
+  }
+  document.getElementById("timer").innerHTML=count + " seconds"; // watch for spelling
+}
+
 var imagesArray = ["images/abstract/abstract_1.png",
                   "images/abstract/abstract_2.png",
                   "images/abstract/abstract_3.png",
@@ -193,6 +212,7 @@ function displayImage(){
 <div id="fullGameContainer" class="container-fluid">
 
   <div id="topMenu" class="row">
+    <h3 id="timer" class="pull-left"> </h3>
     <div id="menuItems" class = "pull-right">
       <img id="settingsWheelBtn" src="settingsWheel.png"/>
       <img id="pausePlayBtn" src="pauseBtn.png"/>
