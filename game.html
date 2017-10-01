@@ -80,8 +80,10 @@
   align: right;
 }
 #timer{
-  padding-left: 2vh;
-  position: absolute;
+  margin-top: 1vh;
+  margin-left: 5vh;
+  height: 40%;
+  width: 40%;
 }
 #menuItems{
   margin-right:1vh;
@@ -147,20 +149,50 @@
 
 <script>
 
-var count = 30;
-var counter = setInterval(timer, 1000);
+//the start display width of progress bar
+var startWidth = 40;
+//in seconds
+var totalTime = 5;
+//in milliseconds
+var checkInterval = 100;
+var checkCountPerSec = 1000/checkInterval;
+var count = totalTime * checkCountPerSec;
 
-// function timer()
-// {
-//   count=count-1;
-//   if (count < 0)
-//   {
-//     clearInterval(counter);
-//      alert('done');
-//      return;
-//   }
-//   document.getElementById("timer").innerHTML=count + " seconds"; // watch for spelling
-// }
+//multiplier to determine new display width
+var multi = startWidth/totalTime;
+
+var percent;
+var time;
+var counter = setInterval(timer, checkInterval);
+
+var halfway = false;
+var quarterway = false;
+
+function timer()
+{
+  count = count-1;
+  if (count < 0)
+  {
+    clearInterval(counter);
+    return;
+  }
+  time = count/checkCountPerSec;
+  if (!halfway && (time < totalTime/2))
+  {
+    halfway=true;
+    $('#timer').css('background-color','orange');
+  }
+  else if (!quarterway && (time < totalTime/4))
+  {
+    quarterway=true;
+    $('#timer').css('background-color','pink');
+  }
+
+  percent = count / checkCountPerSec * multi;
+  $('#timer').css('width',percent+'%');
+  //text = Math.round(count/checkCountPerSec) + 's';
+  //$('#timer').text(text);
+}
 
 var imagesArray = ["images/abstract/abstract_1.png",
                   "images/abstract/abstract_2.png",
@@ -213,7 +245,7 @@ function displayImage(){
 <div id="fullGameContainer" class="container-fluid">
 
   <div id="topMenu" class="row">
-    <h3 id="timer" class="pull-left"> </h3>
+    <div id="timer" class="progress-bar progress-bar-striped active" role="progressbar"></div>
     <div id="menuItems" class = "pull-right">
       <img id="settingsWheelBtn" src="settingsWheel.png"/>
       <img id="pausePlayBtn" src="pauseBtn.png"/>
