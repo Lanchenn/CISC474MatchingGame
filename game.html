@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="startJavaScript.js"></script>
   <script src="script.js"></script>
 
 
@@ -286,7 +287,35 @@ function displayImage(){
   <div id="topMenu" class="row">
     <div id="timer" class="progress-bar progress-bar-striped active" role="progressbar"></div>
     <div id="menuItems" class = "pull-right">
-      <img id="settingsWheelBtn" src="settingsWheel.png"/>
+      <!--<img id="settingsWheelBtn" src="settingsWheel.png"/>-->
+
+      <!-- Trigger/Open The Modal -->
+      <button id="popUpButton" class="w3-circle instruction" src="settingsWheel.png"></button>
+      <!-- The Modal -->
+      <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" id="close"></span><!--&times;-->
+            <h2>Instruction!</h2>
+          </div>
+          <div class="modal-body">
+            <p>The goal of the game is to pair the all cards inside the pattern</p>
+            <p>Simply by clicking two same cards will get scores</p>
+            <p>If you click on the different cards, both cards will flip over
+              and you have to click it again.</p>
+            <p>-------------- Simple Mode ------------- </p>
+            <p>When all the cards are paired, you WIN!</p>
+            <p>----------------------- Hard Mode ---------------------- </p>
+            <p>Once you click the wrong pair, your game time decrease.</p>
+            <p>When all the cards are paired, you WIN!</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Good Luck & Have Fun!</h3>
+          </div>
+        </div>
+      </div>
+
       <img id="pausePlayBtn" onclick="pausePlay()" src="pauseBtn.png"/>
     </div>
   </div>

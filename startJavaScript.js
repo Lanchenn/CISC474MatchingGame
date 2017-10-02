@@ -1,5 +1,5 @@
-// This javascript is about the popup window in game page, which
-// included music, mute and help button.
+// This javascript is about the popup window in start page, which
+// included instruction of how to play the game.
 
 function startPageModal(){
 // Get the modal
