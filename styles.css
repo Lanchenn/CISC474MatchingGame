@@ -2,7 +2,7 @@ body {
   padding: 100px;
   text-align: center;
   font-family: monaco, monospace;
-  background-color: powderblue;
+  background-color: #FFEC94;
   background-size: cover;
 }
 
@@ -69,11 +69,13 @@ body {
   background-size:cover;
   background-image: center;
   display:inline-block;
-  filter: saturate(2);
+  filter: grayscale(100%);
+  opacity:0.5;
   border-color: transparent;
 }
 #firstb:hover{
-  opacity:0.5;
+  opacity: 1;
+  filter:grayscale(0%);
 }
 #secondb{
   border:1px solid black;
@@ -86,11 +88,13 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
   display:inline-block;
-  filter: saturate(2);
+  opacity:0.5;
+  filter: grayscale(100%);
   border-color: transparent;
 }
 #secondb:hover{
-  opacity:0.5;
+  opacity:1;
+  filter:grayscale(0%);
 }
 #thirdb{
   border:1px solid black;
@@ -103,11 +107,13 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
   display:inline-block;
-  filter: saturate(2);
+  filter: grayscale(100%);
+  opacity:0.5;
   border-color: transparent;
 }
 #thirdb:hover{
-  opacity:0.5;
+  opacity:1;
+  filter:grayscale(0%);
 }
 #forthb{
   border:1px solid black;
@@ -121,11 +127,13 @@ body {
   background-size:cover;
   background-image: center;
   display:inline-block;
-  filter: saturate(2);
+  filter: grayscale(100%);
+  opacity:0.5;
   border-color: transparent;
 }
 #forthb:hover{
-  opacity:0.5;
+  opacity:1;
+  filter:grayscale(0%);
 }
 
 
