@@ -31,3 +31,9 @@ function startPageModal(){
 }
 
 window.onload = startPageModal;
+
+
+document.getElementById("button").disabled = true;
+$('#firstb').click(function() {
+    document.getElementById("button").disabled = false;
+}
