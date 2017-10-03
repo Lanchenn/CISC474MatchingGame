@@ -33,7 +33,12 @@ function startPageModal(){
 window.onload = startPageModal;
 
 
-document.getElementById("button").disabled = true;
+var button = document.getElementById("button1");
+var clickBtn = document.getElementsByClassName('click')[0];
+
+
+
+document.getElementById("button1").disabled = true;
 $('#firstb').click(function() {
-    document.getElementById("button").disabled = false;
+    document.getElementById("button1").disabled = false;
 }
