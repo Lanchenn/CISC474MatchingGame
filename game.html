@@ -12,7 +12,10 @@
       array) 1 level of scope up. Within the loop we'd check this array by our
       randomly generated number, and keep generating until we get one not in the
       array. Not a great method for very high numbers, but more than fast enough
-      for our purposes :) -->
+      for our purposes :)
+     Music: https://www.bensound.com
+     Card Images: http://game-icons.net
+     Sound Effects: soundbible.com -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -153,7 +156,7 @@
 //the start display width of progress bar
 var startWidth = 40;
 //in seconds
-var totalTime = 5;
+var totalTime = 30;
 //in milliseconds
 var checkInterval = 100;
 var checkCountPerSec = 1000/checkInterval;
@@ -190,18 +193,34 @@ function stopTimer()
   clearInterval(counter);
 }
 
+//make sure to reset when game restart
+var jazzAudio = new Audio("sound/jazzyfrenchy.mp3");
+var woosh = new Audio("sound/woosh.wav")
+
 function pausePlay()
 {
   if (paused)
   {
     startTimer();
     $('#pausePlayBtn').attr('src', 'pauseBtn.png');
+    jazzAudio.play();
   }
   else
   {
     stopTimer();
     $('#pausePlayBtn').attr('src', 'playBtn.png');
+    jazzAudio.pause();
   }
+}
+
+//need to differentiate winning/losing
+function endGame()
+{
+  stopTimer();
+  $('#timer').text("");
+  $('#timer').css('width','0%');
+  jazzAudio.pause();
+  return;
 }
 
 function timing()
@@ -209,10 +228,7 @@ function timing()
   count = count-1;
   if (count <= 0)
   {
-    stopTimer();
-    $('#timer').text("");
-    $('#timer').css('width','0%');
-    return;
+    endGame();
   }
   time = count/checkCountPerSec;
   if (!halfway && (time < totalTime/2))
@@ -241,6 +257,7 @@ var imagesArray = ["images/abstract/abstract_1.png",
 
 function displayImage(){
     startTimer();
+    jazzAudio.play();
 
     var num1 = Math.floor(Math.random() * (imagesArray.length));
     document.canvas1.src = imagesArray[num1];
