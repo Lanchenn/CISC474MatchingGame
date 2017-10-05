@@ -33,12 +33,18 @@ function startPageModal(){
 window.onload = startPageModal;
 
 
-var button = document.getElementById("button1");
-var clickBtn = document.getElementsByClassName('click')[0];
+var button1 = document.getElementById("button1");
+var button2 = document.getElementById("button2");
+var clickBtn = document.getElementsByClassName('click1')[0];
+// Disable the button on initial page load
+button1.disabled = true;
+button2.disabled = true;
 
+//clickBtn.addEventListener('click1', function(event) {
+    //button.disabled = !button.disabled;
+//});
 
-
-document.getElementById("button1").disabled = true;
+//document.getElementById("button1").disabled = true;
 $('#firstb').click(function() {
     document.getElementById("button1").disabled = false;
 }

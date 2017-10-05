@@ -129,7 +129,7 @@ body {
   opacity: 1;
   filter:grayscale(0%);
 }
-#firstb:click{
+#click1{
   opacity: 1;
   filter:grayscale(0%);
   box-shadow: 10px 10px 5px grey;
