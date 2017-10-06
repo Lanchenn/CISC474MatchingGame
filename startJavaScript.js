@@ -1,6 +1,6 @@
 var img = document.getElementById('firstb');
 var b1 = document.getElementById('button1');
-var b2 = document.getElementById('button2');
+//var b2 = document.getElementById('button2');
 //var clickBtn = document.getElementsByClassName("click1")[0];
 // Disable the button on initial page load
 //button1.disabled = true;
@@ -9,9 +9,9 @@ var b2 = document.getElementById('button2');
 //clickBtn.addEventListener('click1', function(event) {
   //  button.disabled = !button.disabled;
 //});
-img.onclick = function(){
-  document.getElementById('button1').disabled = false;
-}
+//img.onclick = function(){
+//  document.getElementById('button1').disabled = false;
+//}
 /*function iffunction(){
   if(){
 
@@ -53,6 +53,7 @@ function startPageModal(){
       modal.style.display = "none";
     }
   }
+  //window.onload = startPageModal;
 }
 
-window.onload = startPageModal;
+//window.onload = startPageModal;
