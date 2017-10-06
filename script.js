@@ -38,20 +38,24 @@ $(document).ready(function() {
         $(this).addClass("disabledbutton");
         // alert($(this).attr('id'));
         // alert(card1ref);
-        // $(card1ref).addClass("disabledbutton");
+        $(card1ref).addClass("disabledbutton");
         $("#gameBoard").removeClass("disabledbutton");
         //disable these two cards
       }
       else{
         alert("nope");
         //flip cards back over
+        $(this).removeClass("flipped");
+        $(card1ref).removeClass("flipped");
+        
+        $(this).addClass("flippedBack");
+        $(card1ref).addClass("flippedBack");
+
         //reenable the game board
-        $(card1ref).removeClass("disabledbutton");
         $("#gameBoard").removeClass("disabledbutton");
       }
     }
     else{
-      $(this).addClass("disabledbutton");
       card1ID = $(this).parent().attr('id');
       card1ref = $(this);
       // alert(card1ref);
