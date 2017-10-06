@@ -9,7 +9,7 @@ $(document).ready(function() {
   var card2SRC;
 
   $('.card').click(function() {
-    
+
     woosh.play();
     i++;
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
       // $(this).parent().attr('id');
       card2SRC = $(this).children("div.back").children("img").attr("src");
       // alert($(this).children("div.back").children("img").attr("src"));
-      alert(card2SRC);
+      // alert(card2SRC);
 
       if(card1SRC == card2SRC){
         alert("yes!");
@@ -49,8 +49,8 @@ $(document).ready(function() {
       $(this).parent().attr('id');
       card1SRC = $(this).children("div.back").children("img").attr("src");
       // alert($(this).children("div.back").children("img").attr("src"));
-      alert(card1SRC);
+      // alert(card1SRC);
     }
-alert("here5");
+// alert("here5");
   })
 });

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  $('.card').click(function(callback) {
-    alert("flip");
+  $('.card').click(function() {
+    // alert("flip");
     var parentid = $(this).parent().attr('id');
     var cardSpot = document.getElementById(parentid).children[0];
 
@@ -15,6 +15,6 @@ $(document).ready(function() {
         $(this).addClass('flipper');
       }
 
-      
+
   })
 });
