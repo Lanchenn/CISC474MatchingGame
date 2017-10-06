@@ -285,9 +285,12 @@
 var startWidth = 40;
 //in seconds
 var totalTime = 30;
+var minusTime = 2;
 //in milliseconds
 var checkInterval = 100;
+
 var checkCountPerSec = 1000/checkInterval;
+var minusCount = minusTime * checkCountPerSec;
 
 //multiplier to determine new display width
 var multi = startWidth/totalTime;
@@ -319,6 +322,11 @@ function stopTimer()
 {
   paused = true;
   clearInterval(counter);
+}
+
+function lostTime()
+{
+  count = count - minusCount;
 }
 
 //make sure to reset when game restart
