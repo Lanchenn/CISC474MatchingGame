@@ -38,7 +38,7 @@ $(document).ready(function() {
         $(this).addClass("disabledbutton");
         // alert($(this).attr('id'));
         // alert(card1ref);
-        $(card1ref).addClass("disabledbutton");
+        // $(card1ref).addClass("disabledbutton");
         $("#gameBoard").removeClass("disabledbutton");
         //disable these two cards
       }
@@ -46,10 +46,12 @@ $(document).ready(function() {
         alert("nope");
         //flip cards back over
         //reenable the game board
+        $(card1ref).removeClass("disabledbutton");
         $("#gameBoard").removeClass("disabledbutton");
       }
     }
     else{
+      $(this).addClass("disabledbutton");
       card1ID = $(this).parent().attr('id');
       card1ref = $(this);
       // alert(card1ref);
