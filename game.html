@@ -6,17 +6,22 @@
       array) 1 level of scope up. Within the loop we'd check this array by our
       randomly generated number, and keep generating until we get one not in the
       array. Not a great method for very high numbers, but more than fast enough
-      for our purposes :) -->
+      for our purposes :)
+     Music: https://www.bensound.com
+     Card Images: http://game-icons.net
+     Sound Effects: soundbible.com -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Game_Titile</title>
+  <title>Game_Title</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="gamePageScript.js"></script>
+  <script src="script.js"></script>
 
   <script src = "flip.js"></script>
 <script src="script.js"></script>
@@ -74,9 +79,19 @@
   margin-top: 1vh;
   align: right;
 }
+#volumeBtn{
+  height: 6vh;
+  margin-top: 1vh;
+  align: center;
+}
+.volume{
+  position: auto;
+}
 #timer{
-  padding-left: 2vh;
-  position: absolute;
+  margin-top: 1vh;
+  margin-left: 5vh;
+  height: 40%;
+  width: 40%;
 }
 #menuItems{
   margin-right:1vh;
@@ -138,27 +153,222 @@
     height: 30vh;
     color: white;
 }
+
 .disabledbutton {
     pointer-events: none;
     /*opacity: 0.4;*/
 }
+/* Popup Window Start */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5c85b8;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5c85b8;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* modal button */
+.instruction {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+}
+.instruction:hover{
+  background-color: #da9289;
+
+}
+.instruction span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.instruction span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+.instruction:hover span {
+  padding-right: 25px;
+  background-color: #da9289;
+}
+.instruction:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.instruction:active {
+  background-color: #da9289;
+  box-shadow: 0 10px #666;
+  transform: translateY(2px);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Popup Window Ends */
 </style>
 
 <script>
 
-var count = 30;
-var counter = setInterval(timer, 1000);
+//the start display width of progress bar
+var startWidth = 40;
+//in seconds
+var totalTime = 30;
+//in milliseconds
+var checkInterval = 100;
+var checkCountPerSec = 1000/checkInterval;
 
-function timer()
+//multiplier to determine new display width
+var multi = startWidth/totalTime;
+
+var counter = null;
+var percent;
+var time;
+var count = totalTime * checkCountPerSec;
+var paused = false;
+var halfway = false;
+var quarterway = false;
+
+function resetTimer()
 {
-  count=count-1;
-  if (count < 0)
+  count = totalTime * checkCountPerSec;
+  paused = false;
+  halfway = false;
+  quarterway = false;
+  counter = setInterval(timing, checkInterval);
+}
+
+function startTimer()
+{
+  paused = false;
+  counter = setInterval(timing, checkInterval);
+}
+
+function stopTimer()
+{
+  paused = true;
+  clearInterval(counter);
+}
+
+//make sure to reset when game restart
+var jazzAudio = new Audio("sound/jazzyfrenchy.mp3");
+var woosh = new Audio("sound/woosh.wav")
+
+function pausePlay()
+{
+  if (paused)
   {
-    clearInterval(counter);
-     alert('done');
-     return;
+    startTimer();
+    $('#pausePlayBtn').attr('src', 'pauseBtn.png');
+    jazzAudio.play();
   }
-  document.getElementById("timer").innerHTML=count + " seconds"; // watch for spelling
+  else
+  {
+    stopTimer();
+    $('#pausePlayBtn').attr('src', 'playBtn.png');
+    jazzAudio.pause();
+  }
+}
+
+//need to differentiate winning/losing
+function endGame()
+{
+  stopTimer();
+  $('#timer').text("");
+  $('#timer').css('width','0%');
+  jazzAudio.pause();
+  return;
+}
+
+function timing()
+{
+  count = count-1;
+  if (count <= 0)
+  {
+    endGame();
+  }
+  time = count/checkCountPerSec;
+  if (!halfway && (time < totalTime/2))
+  {
+    halfway=true;
+    $('#timer').css('background-color','orange');
+  }
+  else if (!quarterway && (time < totalTime/4))
+  {
+    quarterway=true;
+    $('#timer').css('background-color','pink');
+  }
+
+  percent = count / checkCountPerSec * multi;
+  $('#timer').css('width',percent+'%');
+  text = Math.round(count/checkCountPerSec) + 's';
+  $('#timer').text(text);
 }
 
 var imagesArray = ["images/abstract/abstract_1.png",
@@ -196,6 +406,7 @@ function displayImage(){
 
           var name1 = canvas1.concat(cardToPlace1.toString());
           // alert("name1: "+name1);
+
 
           do{
             cardToPlace2 = Math.floor(Math.random() * (12));
@@ -248,15 +459,40 @@ function displayImage(){
 </head>
 
 
-<body onload="displayImage()">
+<body onload="displayImage(); gamePageModal(); startTimer(); jazzAudio.play();">
 
 <div id="fullGameContainer" class="container-fluid">
 
   <div id="topMenu" class="row">
-    <h3 id="timer" class="pull-left"> </h3>
+    <div id="timer" class="progress-bar progress-bar-striped active" role="progressbar"></div>
     <div id="menuItems" class = "pull-right">
-      <img id="settingsWheelBtn" src="settingsWheel.png"/>
-      <img id="pausePlayBtn" src="pauseBtn.png"/>
+      <!--<img id="settingsWheelBtn" src="settingsWheel.png"/>-->
+
+      <!-- Trigger/Open The Modal -->
+      <button id="popUpButton" class="instruction">
+        <img id="settingsWheelBtn" src="settingsWheel.png"/>
+      </button>
+      <!-- The Modal -->
+      <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" id="close"></span><!--&times;-->
+            <h2>Setting</h2>
+          </div>
+          <div class="modal-body">
+            <p><button id="volume" class = "volume">
+                  <img id="volumeBtn" src="images/volumeOn.png"/></button></p>
+            <p><button id="mute" class = "volume">
+                  <img id="volumeBtn" src="images/mute.png"/></button></p>
+          </div>
+          <div class="modal-footer">
+            <h3>Good Luck & Have Fun!</h3>
+          </div>
+        </div>
+      </div>
+
+      <img id="pausePlayBtn" onclick="pausePlay()" src="pauseBtn.png"/>
     </div>
   </div>
 

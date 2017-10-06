@@ -1,5 +1,30 @@
-// This javascript is about the popup window in game page, which
-// included music, mute and help button.
+var img = document.getElementById('firstb');
+var b1 = document.getElementById('button1');
+var b2 = document.getElementById('button2');
+//var clickBtn = document.getElementsByClassName("click1")[0];
+// Disable the button on initial page load
+//button1.disabled = true;
+//button2.disabled = true;
+
+//clickBtn.addEventListener('click1', function(event) {
+  //  button.disabled = !button.disabled;
+//});
+img.onclick = function(){
+  document.getElementById('button1').disabled = false;
+}
+/*function iffunction(){
+  if(){
+
+  }
+  retrun true;
+}
+//document.getElementById("button1").disabled = true;
+//$('#firstb').click(function() {
+document.getElementById("button1").disabled = iffunction();
+*/
+
+// This javascript is about the popup window in start page, which
+// included instruction of how to play the game.
 
 function startPageModal(){
 // Get the modal

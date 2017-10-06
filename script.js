@@ -9,6 +9,8 @@ $(document).ready(function() {
   var card2SRC;
 
   $('.card').click(function() {
+    
+    woosh.play();
     i++;
 
     //do this right away in case there is a delay. don't want the user to be able to use the delay to click a 3rd card.
