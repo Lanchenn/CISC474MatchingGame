@@ -84,7 +84,14 @@
   align: center;
 }
 .volume{
-  position: auto;
+    display: block;
+    background: #c2e4f5;
+    color: white;
+    border: none;
+    padding: .5em 1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
 }
 #timer{
   margin-top: 1vh;
@@ -189,6 +196,13 @@
 .modal-body {
   padding: 2px 16px;
 }
+
+.button-panel
+{
+    display: table;
+    margin: 0 auto;
+}
+
 
 /* Modal Footer */
 .modal-footer {
@@ -494,10 +508,20 @@ function displayImage(){
             <h2>Setting</h2>
           </div>
           <div class="modal-body">
-            <p><button id="volume" class = "volume">
-                  <img id="volumeBtn" src="images/volumeOn.png"/></button></p>
-            <p><button id="mute" class = "volume">
-                  <img id="volumeBtn" src="images/mute.png"/></button></p>
+            <div class="button-panel">
+              <button id="help" class="volume">
+                <img id="volumeBtn" src="images/help.png"/>
+              </button>
+              <button id="volume" class="volume">
+                <img id="volumeBtn" src="images/volumeOn.png"/>
+              </button>
+              <button id="mute" class="volume">
+                <img id="volumeBtn" src="images/mute.png"/>
+              </button>
+              <button id="exit" class="volume">
+                <img id="volumeBtn" src="images/exit.png"/>
+              </button>
+            </div>
           </div>
           <div class="modal-footer">
             <h3>Good Luck & Have Fun!</h3>
