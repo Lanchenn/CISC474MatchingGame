@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
 
+  <script src = "flip.js"></script>
+<script src="script.js"></script>
 
 <style>
 /* flip speed goes here */
@@ -75,6 +76,7 @@
 }
 #timer{
   padding-left: 2vh;
+  position: absolute;
 }
 #menuItems{
   margin-right:1vh;
@@ -135,6 +137,10 @@
 .img-responsive{
     height: 30vh;
     color: white;
+}
+.disabledbutton {
+    pointer-events: none;
+    /*opacity: 0.4;*/
 }
 </style>
 
@@ -236,40 +242,6 @@ function displayImage(){
           // alert("imgCounts arrayBottom: " + imgCounts[0]+imgCounts[1]+imgCounts[2]+imgCounts[3]+imgCounts[4]+imgCounts[5]);
           // alert("cardsPlaced arrayBottom: " + cardsPlaced[0]+cardsPlaced[1]+cardsPlaced[2]+cardsPlaced[3]+cardsPlaced[4]+cardsPlaced[5]+cardsPlaced[6]+cardsPlaced[7]+cardsPlaced[8]+cardsPlaced[9]+cardsPlaced[10]+cardsPlaced[11]);
       }
-
-
-
-
-    //
-    // var num2 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas2.src = imagesArray[num2];
-    //
-    // var num3 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas3.src = imagesArray[num3];
-    //
-    // var num4 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas4.src = imagesArray[num4];
-    //
-    //
-    // var num5 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas5.src = imagesArray[num5];
-    // var num6 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas6.src = imagesArray[num6];
-    // var num7 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas7.src = imagesArray[num7];
-    //
-    // var num8 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas8.src = imagesArray[num8];
-    // var num9 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas9.src = imagesArray[num9];
-    // var num10 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas10.src = imagesArray[num10];
-    // var num11 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas11.src = imagesArray[num11];
-    //
-    //
-    // var num12 = Math.floor(Math.random() * (imagesArray.length));
-    // document.canvas12.src = imagesArray[num12];
 }
 </script>
 
@@ -374,9 +346,11 @@ function displayImage(){
 
         <!-- card 1 -->
         <div id="c1r3" class="col-xs-3">
-          <div id="cardSpot" class="card">
+          <div id="cardSpot" class="card" onclick="flip.js">
+            <div onclick="script.js">
             <div class="front"><img class="img-responsive" src="spacer.jpg" name="back"/></div>
             <div class="back"><img class="img-responsive" src="spacer.jpg" id="canvas8" /></div>
+          </div>
           </div>
         </div>
 
