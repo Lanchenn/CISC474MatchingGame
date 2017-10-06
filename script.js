@@ -7,6 +7,7 @@ $(document).ready(function() {
   var card2ID;
   var card1SRC;
   var card2SRC;
+  var card1ref;
 
   $('.card').click(function() {
 
@@ -34,6 +35,10 @@ $(document).ready(function() {
       if(card1SRC == card2SRC){
         alert("yes!");
         //reenable game board
+        $(this).addClass("disabledbutton");
+        // alert($(this).attr('id'));
+        // alert(card1ref);
+        $(card1ref).addClass("disabledbutton");
         $("#gameBoard").removeClass("disabledbutton");
         //disable these two cards
       }
@@ -46,6 +51,8 @@ $(document).ready(function() {
     }
     else{
       card1ID = $(this).parent().attr('id');
+      card1ref = $(this);
+      // alert(card1ref);
       $(this).parent().attr('id');
       card1SRC = $(this).children("div.back").children("img").attr("src");
       // alert($(this).children("div.back").children("img").attr("src"));
