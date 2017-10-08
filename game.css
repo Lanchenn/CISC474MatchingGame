@@ -70,6 +70,7 @@
   height:90vh;
   background: grey;
   width: 100%;
+	background-image: url("images/background/lightwooden.jpeg");
 }
 .card {
     width: 100%;
@@ -128,6 +129,7 @@
 .img-responsive{
     height: 30vh;
     color: white;
+		border: 10px ridge #ceb070;
 }
 
 .disabledbutton {
