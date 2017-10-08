@@ -1,26 +1,5 @@
-//var img = document.getElementById('firstb');
-//var b1 = document.getElementById('button1');
-//var b2 = document.getElementById('button2');
-//var clickBtn = document.getElementsByClassName("click1")[0];
-// Disable the button on initial page load
-//button1.disabled = true;
-//button2.disabled = true;
-
-//clickBtn.addEventListener('click1', function(event) {
-  //  button.disabled = !button.disabled;
-//});
-//img.onclick = function(){
-//  document.getElementById('button1').disabled = false;
-//}
-
 function my1(){
-  //var img = document.getElementById('firstb');
-  //var b1 = document.getElementById('button1');
-  //var b2 = document.getElementById('button2');
-  //document.getElementById("firstb").style.opacity = "1";
-  //document.getElementById("firstb").style.filter = 'grayscale(0%)';
-  //document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
-  //document.getElementById("button1").disable = false;
+
   var haha = document.getElementById('secondb').style.opacity;
   var hehe = document.getElementById('thirdb').style.opacity;
   var hoho = document.getElementById('forthb').style.opacity;
@@ -48,9 +27,7 @@ function my1(){
   document.getElementById("button2").disabled = false;
   //retrun true;
 }
-//document.getElementById("button1").disabled = true;
-//$('#firstb').click(function() {
-//document.getElementById("button1").disabled = iffunction();
+
 function my2(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('thirdb').style.opacity;
@@ -147,12 +124,6 @@ function myFunction(){
   }
 
 }
-
-
-
-
-
-
 
 
 
