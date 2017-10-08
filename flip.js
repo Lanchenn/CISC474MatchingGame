@@ -10,7 +10,6 @@ $(document).ready(function() {
         $(this).removeClass('flipped');
       }
       else {
-        // include disabled in "flipped" class
         $(this).addClass('flipped');
         $(this).addClass('flipper');
       }

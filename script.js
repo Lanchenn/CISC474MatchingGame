@@ -1,5 +1,3 @@
-//separate this into function "flip" and the rest.
-
 $(document).ready(function() {
 
   var i = 0;
@@ -33,7 +31,7 @@ $(document).ready(function() {
       // alert(card2SRC);
 
       if(card1SRC == card2SRC){
-        alert("yes!");
+        alert("match!");
         //reenable game board
         $(this).addClass("disabledbutton");
         // alert($(this).attr('id'));
@@ -43,13 +41,19 @@ $(document).ready(function() {
         //disable these two cards
       }
       else{
-        alert("nope");
+        alert("not a match");
         //flip cards back over
         $(this).removeClass("flipped");
         $(card1ref).removeClass("flipped");
-        
+
+
+
         $(this).addClass("flippedBack");
         $(card1ref).addClass("flippedBack");
+
+
+        //wait
+        // $(delay(1000));
 
         //reenable the game board
         $("#gameBoard").removeClass("disabledbutton");
@@ -65,5 +69,7 @@ $(document).ready(function() {
       // alert(card1SRC);
     }
 // alert("here5");
+
+  // alert($(this).attr('class'));
   })
 });
