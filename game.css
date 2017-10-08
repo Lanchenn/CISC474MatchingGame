@@ -49,13 +49,50 @@
   margin-top: 1vh;
   align: right;
 }
-#volumeBtn{
+#volumeOn{
   height: 6vh;
   margin-top: 1vh;
   align: center;
+  display: block;
+  background: #c2e4f5;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 45%;
+  margin-left: 28%;
+  box-shadow: inset 4px 2px 1px grey;
+  opacity: 0.5;
 }
-.volume{
-  position: auto;
+#mute{
+  height: 6vh;
+  margin-top: 1vh;
+  align: center;
+  display: block;
+  background: #c2e4f5;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 45%;
+  margin-left: 28%;
+  box-shadow: 4px 2px 1px grey;
+  opacity: 1;
+}
+#exit{
+  height: 6vh;
+  margin-top: 1vh;
+  align: center;
+  display: block;
+  background: #c2e4f5;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 45%;
+  margin-left: 28%;
+  box-shadow: 4px 2px 1px grey;
+  opacity: 1;
 }
 #timer{
   margin-top: 1vh;
@@ -163,6 +200,12 @@
   padding: 2px 16px;
 }
 
+.button-panel
+{
+    display: table;
+    margin: 0 auto;
+}
+
 /* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
@@ -177,7 +220,7 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 25%;
+    width: 15%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;

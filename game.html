@@ -22,10 +22,9 @@
   <link rel="stylesheet" href="game.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="gamePageScript.js"></script>
 
   <script src = "flip.js"></script>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 <script>
 
@@ -80,13 +79,13 @@ function pausePlay()
   {
     startTimer();
     $('#pausePlayBtn').attr('src', 'pauseBtn.png');
-    jazzAudio.play();
+    //jazzAudio.play();
   }
   else
   {
     stopTimer();
     $('#pausePlayBtn').attr('src', 'playBtn.png');
-    jazzAudio.pause();
+    //jazzAudio.pause();
   }
 }
 
@@ -207,6 +206,69 @@ function displayImage(){
           // alert("cardsPlaced arrayBottom: " + cardsPlaced[0]+cardsPlaced[1]+cardsPlaced[2]+cardsPlaced[3]+cardsPlaced[4]+cardsPlaced[5]+cardsPlaced[6]+cardsPlaced[7]+cardsPlaced[8]+cardsPlaced[9]+cardsPlaced[10]+cardsPlaced[11]);
       }
 }
+
+// This javascript is about the popup window in game page, which
+// included music, mute and help button.
+
+function gamePageModal(){
+// Get the modal
+  var modal = document.getElementById('modal');
+
+// Get the button that opens the modal
+  var btn = document.getElementById("popUpButton");
+
+// Get pause button image
+  var img = document.querySelectorAll("img")[0];
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    console.log(modal);
+    modal.style.display = "block";
+    pausePlay();
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      pausePlay();
+    }
+  }
+}
+
+/* change the background color when the button is clicked in setting */
+function clickMute(){
+  var mute = document.getElementById("mute").style.opacity;
+  var volumeOn = document.getElementById("volumeOn").style.opacity;
+  if (mute == "1"){
+    document.getElementById("mute").style.opacity = "0.5";
+    document.getElementById("mute").style.boxShadow = "inset 4px 2px 1px grey";
+    jazzAudio.pause();
+    document.getElementById("volumeOn").style.opacity = "1";
+    document.getElementById("volumeOn").style.boxShadow = "4px 2px 1px grey";
+  }
+  else if (volumeOn == "1"){
+    document.getElementById("mute").style.opacity = "1";
+    document.getElementById("mute").style.boxShadow = "4px 2px 1px grey";
+    document.getElementById("volumeOn").style.boxShadow = "inset 4px 2px 1px grey";
+    document.getElementById("volumeOn").style.opacity = "0.5";
+    jazzAudio.play();
+  }
+  else {
+    document.getElementById("mute").style.opacity = "0.5";
+    document.getElementById("volumeOn").style.opacity = "1";
+    document.getElementById("mute").style.boxShadow = "inset 4px 2px 1px grey";
+    document.getElementById("volumeOn").style.boxShadow = "4px 2px 1px grey";
+    jazzAudio.pause();
+  }
+}
+/* exit the game page when click exit in setting */
+function exitGame(){
+  document.getElementById("exit").style.opacity = "0.5";
+  document.getElementById("exit").style.boxShadow = "inset 4px 2px 1px grey";
+  window.location.assign("start.html");
+}
+
 </script>
 
 </head>
@@ -230,17 +292,17 @@ function displayImage(){
         <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close" id="close"></span><!--&times;-->
             <h2>Setting</h2>
           </div>
           <div class="modal-body">
-            <p><button id="volume" class = "volume">
-                  <img id="volumeBtn" src="images/volumeOn.png"/></button></p>
-            <p><button id="mute" class = "volume">
-                  <img id="volumeBtn" src="images/mute.png"/></button></p>
+            <div class="button-panel">
+              <img id="volumeOn" src="images/volumeOn.png" onclick="clickMute()">
+              <img id="mute" src="images/mute.png" onclick="clickMute()">
+              <img id="exit" src="images/exit.png" onclick="exitGame()">
+            </div>
           </div>
           <div class="modal-footer">
-            <h3>Good Luck & Have Fun!</h3>
+            <h3></h3>
           </div>
         </div>
       </div>
