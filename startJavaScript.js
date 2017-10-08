@@ -38,6 +38,14 @@ function my1(){
   document.getElementById("firstb").style.opacity = "1";
   document.getElementById("firstb").style.filter = 'grayscale(0%)';
   document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
+
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  //document.getElementById("button1").onmouseover.style.cursor= "pointer";
+  //document.getElementById("button1").style.backgroundColor = '#da9289';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
   //retrun true;
 }
 //document.getElementById("button1").disabled = true;
@@ -61,6 +69,11 @@ function my2(){
   document.getElementById("secondb").style.opacity = "1";
   document.getElementById("secondb").style.filter = 'grayscale(0%)';
   document.getElementById("secondb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
 }
 function my3(){
   var haha = document.getElementById('firstb').style.opacity;
@@ -80,6 +93,11 @@ function my3(){
   document.getElementById("thirdb").style.opacity = "1";
   document.getElementById("thirdb").style.filter = 'grayscale(0%)';
   document.getElementById("thirdb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
 }
 function my4(){
   var haha = document.getElementById('firstb').style.opacity;
@@ -99,6 +117,11 @@ function my4(){
   document.getElementById("forthb").style.opacity = "1";
   document.getElementById("forthb").style.filter = 'grayscale(0%)';
   document.getElementById("forthb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
 }
 
 function myFunction(){
@@ -107,10 +130,20 @@ function myFunction(){
   var hoho = document.getElementById('thirdb').style.opacity;
   var hihi = document.getElementById('forthb').style.opacity;
 
-  if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
-  //if(haha == "1"){
-    document.getElementById("button1").disabled = false;
+  //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
+  if(haha == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    //document.getElementById("button1").style.cursor = 'not-allowed';
+    //document.getElementById("button1").onmouseover.style.cursor= "pointer";
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //document.getElementById("button1").disabled = false;
     window.location.assign("game.html");
+  }else if(hehe == "1"){
+
+  }else if(hoho == "1"){
+
+  }else if(hihi == "1"){
+
   }
 
 }

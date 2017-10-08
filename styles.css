@@ -19,20 +19,23 @@ body {
   transition: all 0.5s;
   margin: 5px;
 
-  cursor: pointer;
+  /*cursor: pointer;*/
   outline: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+
+  cursor:not-allowed;
 }
 #button1:hover{
   background-color: #da9289;
 
 }
 #button1 span {
-  cursor: pointer;
+  /*cursor: pointer;*/
   display: inline-block;
   position: relative;
   transition: 0.5s;
+  /*cursor:not-allowed;*/
 }
 #button1 span:after {
   content: '\00bb';
@@ -44,7 +47,7 @@ body {
 }
 #button1:hover span {
   padding-right: 25px;
-  background-color: #da9289;
+  /*background-color: #da9289;*/
 }
 #button1:hover span:after {
   opacity: 1;
@@ -54,6 +57,12 @@ body {
   background-color: #da9289;
   box-shadow: 0 10px #666;
   transform: translateY(8px);
+}
+#button1:disabled,
+button1[disabled]{
+  /*border: 1px solid #999999;*/
+  background-color: #cccccc;
+  color: #666666;
 }
 
 
@@ -70,13 +79,13 @@ body {
   transition: all 0.5s;
   margin: 5px;
 
-  cursor: pointer;
+  cursor: not-allowed;
   outline: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 #button2:hover{
-  background-color: #e6b6b0;
+  background-color: #da9289;
 }
 #button2 span {
   cursor: pointer;
@@ -94,7 +103,7 @@ body {
 }
 #button2:hover span {
   padding-right: 25px;
-  background-color: #e6b6b0;
+  /*background-color: #da9289;*/
 }
 #button2:hover span:after {
   opacity: 1;
@@ -104,6 +113,12 @@ body {
   background-color: #da9289;
   box-shadow: 0 10px #666;
   transform: translateY(8px);
+}
+#button2:disabled,
+button2[disabled]{
+  /*border: 1px solid #999999;*/
+  background-color: #cccccc;
+  color: #666666;
 }
 
 
