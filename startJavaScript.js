@@ -17,22 +17,93 @@ function my1(){
   //var img = document.getElementById('firstb');
   //var b1 = document.getElementById('button1');
   //var b2 = document.getElementById('button2');
+  //document.getElementById("firstb").style.opacity = "1";
+  //document.getElementById("firstb").style.filter = 'grayscale(0%)';
+  //document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
+  //document.getElementById("button1").disable = false;
+  var haha = document.getElementById('secondb').style.opacity;
+  var hehe = document.getElementById('thirdb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("firstb").style.opacity = "1";
+    document.getElementById("firstb").style.filter = 'grayscale(0%)';
+    document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
+  }
   document.getElementById("firstb").style.opacity = "1";
   document.getElementById("firstb").style.filter = 'grayscale(0%)';
   document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
-  document.getElementById("button1").disable = false;
-  //if(){
-
-  //}
   //retrun true;
 }
 //document.getElementById("button1").disabled = true;
 //$('#firstb').click(function() {
 //document.getElementById("button1").disabled = iffunction();
+function my2(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('thirdb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("secondb").style.opacity = "1";
+    document.getElementById("secondb").style.filter = 'grayscale(0%)';
+    document.getElementById("secondb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("secondb").style.opacity = "1";
+  document.getElementById("secondb").style.filter = 'grayscale(0%)';
+  document.getElementById("secondb").style.boxShadow = "5px 5px 5px gray";
+}
+function my3(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("thirdb").style.opacity = "1";
+    document.getElementById("thirdb").style.filter = 'grayscale(0%)';
+    document.getElementById("thirdb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("thirdb").style.opacity = "1";
+  document.getElementById("thirdb").style.filter = 'grayscale(0%)';
+  document.getElementById("thirdb").style.boxShadow = "5px 5px 5px gray";
+}
+function my4(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('thirdb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else{
+    document.getElementById("forthb").style.opacity = "1";
+    document.getElementById("forthb").style.filter = 'grayscale(0%)';
+    document.getElementById("forthb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("forthb").style.opacity = "1";
+  document.getElementById("forthb").style.filter = 'grayscale(0%)';
+  document.getElementById("forthb").style.boxShadow = "5px 5px 5px gray";
+}
 
+function myFunction(){
 
-
-
+}
 
 
 
