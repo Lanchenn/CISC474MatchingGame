@@ -8,7 +8,7 @@
     <script src="startJavaScript.js"></script>
   </head>
 
-  <body>
+  <body onload="startPageModal()">
 
     <div>
       <div>
@@ -42,29 +42,28 @@
             </div>
           </div>
         </div>
-
-        <h1>CHOOSE A Pattern</h1>
       </div>
 
-      <div id = "firstb">
-      </div>
-        <div id="secondb">
+      <h1>CHOOSE ONE</h1>
 
+      <div>
+        <div id = "firstb" onclick="my1()">
         </div>
 
-        <div id="thirdb">
+        <div id="secondb" onclick="my2()">
         </div>
 
-
-        <div id="forthb">
+        <div id="thirdb" onclick="my3()">
         </div>
 
+        <div id="forthb" onclick="my4()">
+        </div>
 
     </div>
 
     <div>
-      <button id="button1" disabled><span>EASY </span></button>
-      <button id="button2" disabled><span>ARCADE </span></button>
+      <button id="button1" onclick="myFunction()" disabled="true"><span>EASY</span></button>
+      <button id="button2" onclick="myFunction()" disabled="true"><span>HARD</span></button>
     </div>
   </body>
 </html>

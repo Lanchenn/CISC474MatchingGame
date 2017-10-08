@@ -1,27 +1,131 @@
-var img = document.getElementById('firstb');
-var b1 = document.getElementById('button1');
-var b2 = document.getElementById('button2');
-//var clickBtn = document.getElementsByClassName("click1")[0];
-// Disable the button on initial page load
-//button1.disabled = true;
-//button2.disabled = true;
+function my1(){
 
-//clickBtn.addEventListener('click1', function(event) {
-  //  button.disabled = !button.disabled;
-//});
-img.onclick = function(){
-  document.getElementById('button1').disabled = false;
+  var haha = document.getElementById('secondb').style.opacity;
+  var hehe = document.getElementById('thirdb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("firstb").style.opacity = "1";
+    document.getElementById("firstb").style.filter = 'grayscale(0%)';
+    document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("firstb").style.opacity = "1";
+  document.getElementById("firstb").style.filter = 'grayscale(0%)';
+  document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
+
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  //document.getElementById("button1").onmouseover.style.cursor= "pointer";
+  //document.getElementById("button1").style.backgroundColor = '#da9289';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
+  //retrun true;
 }
-/*function iffunction(){
-  if(){
+
+function my2(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('thirdb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("secondb").style.opacity = "1";
+    document.getElementById("secondb").style.filter = 'grayscale(0%)';
+    document.getElementById("secondb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("secondb").style.opacity = "1";
+  document.getElementById("secondb").style.filter = 'grayscale(0%)';
+  document.getElementById("secondb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
+}
+function my3(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('forthb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("forthb").style.opacity = "0.5";
+  }else{
+    document.getElementById("thirdb").style.opacity = "1";
+    document.getElementById("thirdb").style.filter = 'grayscale(0%)';
+    document.getElementById("thirdb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("thirdb").style.opacity = "1";
+  document.getElementById("thirdb").style.filter = 'grayscale(0%)';
+  document.getElementById("thirdb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
+}
+function my4(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('thirdb').style.opacity;
+  if(haha == "1"){
+    document.getElementById("firstb").style.opacity = "0.5";
+  }else if(hehe == "1"){
+    document.getElementById("secondb").style.opacity = "0.5";
+  }else if(hoho == "1"){
+    document.getElementById("thirdb").style.opacity = "0.5";
+  }else{
+    document.getElementById("forthb").style.opacity = "1";
+    document.getElementById("forthb").style.filter = 'grayscale(0%)';
+    document.getElementById("forthb").style.boxShadow = "5px 5px 5px gray";
+  }
+  document.getElementById("forthb").style.opacity = "1";
+  document.getElementById("forthb").style.filter = 'grayscale(0%)';
+  document.getElementById("forthb").style.boxShadow = "5px 5px 5px gray";
+
+  document.getElementById("button1").style.cursor = 'pointer';
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").style.cursor = 'pointer';
+  document.getElementById("button2").disabled = false;
+}
+
+function myFunction(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('thirdb').style.opacity;
+  var hihi = document.getElementById('forthb').style.opacity;
+
+  //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
+  if(haha == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    //document.getElementById("button1").style.cursor = 'not-allowed';
+    //document.getElementById("button1").onmouseover.style.cursor= "pointer";
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //document.getElementById("button1").disabled = false;
+    window.location.assign("game.html");
+  }else if(hehe == "1"){
+
+  }else if(hoho == "1"){
+
+  }else if(hihi == "1"){
 
   }
-  retrun true;
+
 }
-//document.getElementById("button1").disabled = true;
-//$('#firstb').click(function() {
-document.getElementById("button1").disabled = iffunction();
-*/
+
+
 
 // This javascript is about the popup window in start page, which
 // included instruction of how to play the game.
@@ -53,6 +157,6 @@ function startPageModal(){
       modal.style.display = "none";
     }
   }
+  //window.onload = startPageModal;
 }
-
-window.onload = startPageModal;
+//window.onload = startPageModal;
