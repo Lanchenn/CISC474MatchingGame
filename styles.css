@@ -76,7 +76,7 @@ body {
   box-shadow: 0 9px #999;
 }
 #button2:hover{
-  background-color: #da9289;
+  background-color: #e6b6b0;
 }
 #button2 span {
   cursor: pointer;
@@ -94,7 +94,7 @@ body {
 }
 #button2:hover span {
   padding-right: 25px;
-  background-color: #da9289;
+  background-color: #e6b6b0;
 }
 #button2:hover span:after {
   opacity: 1;

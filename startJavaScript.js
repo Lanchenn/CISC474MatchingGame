@@ -102,8 +102,22 @@ function my4(){
 }
 
 function myFunction(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('thirdb').style.opacity;
+  var hihi = document.getElementById('forthb').style.opacity;
+
+  if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
+  //if(haha == "1"){
+    document.getElementById("button1").disabled = false;
+    window.location.assign("game.html");
+  }
 
 }
+
+
+
+
 
 
 
