@@ -112,11 +112,14 @@ function button1Clicked(){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("mainPage/game.html");
   }else if(hehe == "1"){
-
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("easy2/easy2.html");
   }else if(hoho == "1"){
-
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("easy3/easy3.html");
   }else if(hihi == "1"){
-
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("easy4/easy4.html");
   }
 
 }

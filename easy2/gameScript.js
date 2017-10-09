@@ -235,12 +235,12 @@ function timing()
 
 /*    CARD IMAGE VARIABLES   */
 
-var imagesArray = ["../images/food/cupcake.png",
-"../images/food/steak.png",
-"../images/food/noodles.png",
-"../images/food/chicken-leg.png",
-"../images/food/croissant.png",
-"../images/food/fried-eggs.png"];
+var imagesArray = ["../images/electronic/computing.png",
+"../images/electronic/cctv-camera.png",
+"../images/electronic/film-projector.png",
+"../images/electronic/gamepad.png",
+"../images/electronic/mouse.png",
+"../images/electronic/smartphone.png"];
 
 var imgCounts = [0, 0, 0, 0, 0, 0];
 
