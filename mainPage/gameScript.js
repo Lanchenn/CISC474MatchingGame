@@ -194,6 +194,7 @@ function endGame()
   $('#timer').css('width','0%');
   jazzAudio.pause();
   disableUnflipped();
+  gameOverPopup();
   return;
 }
 
@@ -221,7 +222,7 @@ function timing()
   if (count <= 0)
   {
     endGame();
-    alert("you lose");
+    //alert("you lose");
   }
 
   colorTimer();
@@ -292,6 +293,20 @@ var cardsPlaced = [0, 0, 0, 0,
       cardsPlaced[cardToPlace2]=1;
     }
   }
+
+  // the popup window for game over
+    function gameOverPopup(){
+      var modalGameOver = document.getElementById('modalGameOver');
+      var img = document.querySelectorAll("img")[0];
+      modalGameOver.style.display = "block";
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modalGameOver) {
+          window.location.assign("../start.html");
+        }
+      }
+    }
 
   // This javascript is about the popup window in game page, which
   // included music, mute and help button.
