@@ -69,22 +69,22 @@ function stopTimer()
 }
 
 //make sure to reset when game restart
-var jazzAudio = new Audio("sound/jazzyfrenchy.mp3");
-var cuteAudio = new Audio("sound/cute.mp3");
-var woosh = new Audio("sound/woosh.wav");
+var jazzAudio = new Audio("../sound/jazzyfrenchy.mp3");
+var cuteAudio = new Audio("../sound/cute.mp3");
+var woosh = new Audio("../sound/woosh.wav");
 
 function pausePlay()
 {
   if (paused)
   {
     startTimer();
-    $('#pausePlayBtn').attr('src', 'images/Icon/pauseBtn.png');
+    $('#pausePlayBtn').attr('src', '../images/Icon/pauseBtn.png');
     //jazzAudio.play();
   }
   else
   {
     stopTimer();
-    $('#pausePlayBtn').attr('src', 'images/Icon/playBtn.png');
+    $('#pausePlayBtn').attr('src', '../images/Icon/playBtn.png');
     //jazzAudio.pause();
   }
 }
@@ -124,12 +124,12 @@ function timing()
   $('#timer').text(text);
 }
 
-var imagesArray = ["images/abstract/abstract_1.png",
-                  "images/abstract/abstract_2.png",
-                  "images/abstract/abstract_3.png",
-                  "images/abstract/abstract_4.png",
-                  "images/abstract/abstract_5.png",
-                  "images/abstract/abstract_6.png"];
+var imagesArray = ["../images/abstract/abstract_1.png",
+                  "../images/abstract/abstract_2.png",
+                  "../images/abstract/abstract_3.png",
+                  "../images/abstract/abstract_4.png",
+                  "../images/abstract/abstract_5.png",
+                  "../images/abstract/abstract_6.png"];
 
 var imgCounts = [0, 0, 0, 0, 0, 0];
 
@@ -266,7 +266,7 @@ function clickMute(){
 function exitGame(){
   document.getElementById("exit").style.opacity = "0.5";
   document.getElementById("exit").style.boxShadow = "inset 4px 2px 1px grey";
-  window.location.assign("start.html");
+  window.location.assign("../start.html");
 }
 
 </script>
@@ -285,7 +285,7 @@ function exitGame(){
 
       <!-- Trigger/Open The Modal -->
       <button id="popUpButton" class="instruction">
-        <img id="settingsWheelBtn" src="images/Icon/settingsWheel.png"/>
+        <img id="settingsWheelBtn" src="../images/Icon/settingsWheel.png"/>
       </button>
       <!-- The Modal -->
       <div id="modal" class="modal">
@@ -296,9 +296,9 @@ function exitGame(){
           </div>
           <div class="modal-body">
             <div class="button-panel">
-              <img id="volumeOn" src="images/Icon/volumeOn.png" onclick="clickMute()">
-              <img id="mute" src="images/Icon/mute.png" onclick="clickMute()">
-              <img id="exit" src="images/Icon/exit.png" onclick="exitGame()">
+              <img id="volumeOn" src="../images/Icon/volumeOn.png" onclick="clickMute()">
+              <img id="mute" src="../images/Icon/mute.png" onclick="clickMute()">
+              <img id="exit" src="../images/Icon/exit.png" onclick="exitGame()">
             </div>
           </div>
           <div class="modal-footer">
@@ -307,7 +307,7 @@ function exitGame(){
         </div>
       </div>
 
-      <img id="pausePlayBtn" onclick="pausePlay()" src="images/Icon/pauseBtn.png"/>
+      <img id="pausePlayBtn" onclick="pausePlay()" src="../images/Icon/pauseBtn.png"/>
     </div>
   </div>
 
@@ -320,8 +320,8 @@ function exitGame(){
       <!-- card 1 -->
       <div id="c1r1" class="col-xs-3">
         <div id="cardSpot1" class="card">
-          <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" id="back"/></div>
-          <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas0" /></div>
+          <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="back"/></div>
+          <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas0" /></div>
         </div>
       </div>
 
@@ -329,8 +329,8 @@ function exitGame(){
       <div id="c2r1" class="col-xs-3">
 
         <div id="cardSpot2" class="card">
-          <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" id="back"/></div>
-          <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas1" /></div>
+          <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="back"/></div>
+          <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas1" /></div>
         </div>
       </div>
 
@@ -338,16 +338,16 @@ function exitGame(){
       <div id="c3r1" class="col-xs-3">
 
         <div id="cardSpot3" class="card">
-          <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas2" /></div>
+          <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+          <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas2" /></div>
       </div>
     </div>
     <!-- card 3 -->
     <div id="c4r1" class="col-xs-3">
 
       <div id="cardSpot4" class="card">
-        <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas3"/></div>
+        <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+        <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas3"/></div>
     </div>
   </div>
 </div> <!-- end row 1 -->
@@ -358,8 +358,8 @@ function exitGame(){
     <!-- card 1 -->
     <div id="c1r2" class="col-xs-3">
       <div id="cardSpot5" class="card">
-        <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas4" /></div>
+        <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+        <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas4" /></div>
       </div>
     </div>
 
@@ -367,8 +367,8 @@ function exitGame(){
     <div id="c2r2" class="col-xs-3">
 
       <div id="cardSpot6" class="card">
-        <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-        <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas5" /></div>
+        <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+        <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas5" /></div>
       </div>
     </div>
 
@@ -376,8 +376,8 @@ function exitGame(){
     <!-- card 3 -->
         <div id="c3r2" class="col-xs-3">
           <div id="cardSpot7" class="card">
-            <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas6" /></div>
+            <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+            <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas6" /></div>
         </div>
       </div>
 
@@ -385,8 +385,8 @@ function exitGame(){
       <div id="c4r2" class="col-xs-3">
 
         <div id="cardSpot8" class="card">
-          <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas7" /></div>
+          <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+          <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas7" /></div>
         </div>
       </div>
 
@@ -399,8 +399,8 @@ function exitGame(){
         <div id="c1r3" class="col-xs-3">
           <div id="cardSpot9" class="card" onclick="flip.js">
             <!-- <div onclick="script.js"> -->
-            <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas8" /></div>
+            <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+            <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas8" /></div>
           <!-- </div> -->
           </div>
         </div>
@@ -409,8 +409,8 @@ function exitGame(){
         <div id="c2r3" class="col-xs-3">
 
           <div id="cardSpot10" class="card">
-            <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas9" /></div>
+            <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+            <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas9" /></div>
           </div>
         </div>
 
@@ -418,8 +418,8 @@ function exitGame(){
         <div id="c3r3" class="col-xs-3">
 
           <div id="cardSpot11" class="card">
-            <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-            <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas10" /></div>
+            <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+            <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas10" /></div>
         </div>
       </div>
 
@@ -427,8 +427,8 @@ function exitGame(){
       <div id="c4r3" class="col-xs-3">
 
         <div id="cardSpot12" class="card">
-          <div class="front"><img class="img-responsive" src="images/Icon/spacer.jpg" name="back"/></div>
-          <div class="back"><img class="img-responsive" src="images/Icon/spacer.jpg" id="canvas11"/></div>
+          <div class="front"><img class="img-responsive" src="../images/Icon/spacer.jpg" name="back"/></div>
+          <div class="back"><img class="img-responsive" src="../images/Icon/spacer.jpg" id="canvas11"/></div>
       </div>
     </div>
   </div> <!-- end row 3 -->
