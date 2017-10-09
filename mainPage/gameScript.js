@@ -10,6 +10,8 @@ var firstSRC;
 var secondSRC;
 var firstRef;
 var score = 0;
+var finalScore = 0;
+var timeLeft = 0;
 
 function flipCard(cardSRC)
 {
@@ -92,11 +94,13 @@ $(document).ready(function() {
         score += 10;
         enableUnflipped();
 
-        if (numCardMatched == 12)
+        if (numCardMatched == 2)
         {
           //alert("you win");
-          gameOverPopup();
           stopTimer();
+          timeLeft = count / checkCountPerSec;
+          finalScore = score + timeLeft;
+          gameWinPopup();
         }
       }
       else
@@ -299,18 +303,34 @@ var cardsPlaced = [0, 0, 0, 0,
   }
 
   // the popup window for game over
-    function gameOverPopup(){
-      var modalGameOver = document.getElementById('modalGameOver');
-      var img = document.querySelectorAll("img")[0];
-      modalGameOver.style.display = "block";
+  function gameOverPopup(){
+    var modalGameOver = document.getElementById('modalGameOver');
+    var img = document.querySelectorAll("img")[0];
 
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modalGameOver) {
-          window.location.assign("../start.html");
-        }
+    modalGameOver.style.display = "block";
+    $("#score").html("Final score: " + finalScore);
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modalGameOver) {
+        window.location.assign("../start.html");
       }
     }
+  }
+
+  // the popup window for game win
+  function gameWinPopup(){
+    var modalGameWin = document.getElementById('modalGameWin');
+    var img = document.querySelectorAll("img")[0];
+
+    modalGameWin.style.display = "block";
+    $("#scoreWin").html("Final score: " + finalScore);
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modalGameWin) {
+        window.location.assign("../start.html");
+      }
+    }
+  }
 
   // This javascript is about the popup window in game page, which
   // included music, mute and help button.

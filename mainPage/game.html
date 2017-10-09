@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
   <link rel="stylesheet" href="modalGameOver.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -68,9 +69,19 @@
         <div class="modalGameOver-body">
             <img id="gameOverImg" src="../images/Icon/gameOver.png"
                   style = "padding-left: 17%">
-            <h>Final Score:
-                <script type="text/javascript">
-                document.write(score)</script></h>
+            <p id="score" class="font-effect-3d-float"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal for game over window-->
+    <div id="modalGameWin" class="modalGameWin">
+      <!-- Modal content -->
+      <div class="modalGameWin-content">
+        <div class="modalGameWin-body">
+            <img id="gameWinImg" src="../images/Icon/youWin.png"
+                  style = "padding-left: 17%">
+            <p id="scoreWin" class="font-effect-3d-float"></p>
         </div>
       </div>
     </div>

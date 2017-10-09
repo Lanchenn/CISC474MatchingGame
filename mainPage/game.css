@@ -278,18 +278,22 @@
     to {top: 0; opacity: 1}
 }
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Popup Window Ends */
+
+#score {
+	position: relative;
+  color: #f5eeee;
+	font-family: 'Nosifer', cursive;
+  font-size: 35px;
+  margin: 40px 0;
+  text-align: center;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+#scoreWin {
+	position: relative;
+  color: #f5eeee;
+	font-family: 'Nosifer', cursive;
+  font-size: 35px;
+  margin: 40px 0;
+  text-align: center;
 }
-/* Popup Window Ends */
