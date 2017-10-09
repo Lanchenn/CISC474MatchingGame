@@ -107,7 +107,7 @@
   height:90vh;
   background: grey;
   width: 100%;
-	background-image: url("images/background/lightwooden.jpeg");
+	background-image: url("../images/background/lightwooden.jpeg");
 }
 .card {
     width: 100%;
