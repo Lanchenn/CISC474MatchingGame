@@ -277,7 +277,7 @@ var cardsPlaced = [0, 0, 0, 0,
 
   function gamePageModal(){
     // Get the modal
-    var modal = document.getElementById('modal');
+    var modal = document.getElementById('#modal');
 
     // Get the button that opens the modal
     var btn = document.getElementById("popUpButton");
@@ -302,35 +302,36 @@ var cardsPlaced = [0, 0, 0, 0,
     }
   }
 
+  function selectModalButton(button)
+  {
+      button.css('opacity', '0.5');
+      button.css('boxShadow', 'inset 4px 2px 1px grey');
+  }
+
+  function deselectModalButton(button)
+  {
+      button.css('opacity', '1');
+      button.css('boxShadow', '4px 2px 1px grey');
+  }
+
   /* change the background color when the button is clicked in setting */
   function clickMute(){
-    var mute = document.getElementById("mute").style.opacity;
-    var volumeOn = document.getElementById("volumeOn").style.opacity;
-    if (mute == "1"){
-      document.getElementById("mute").style.opacity = "0.5";
-      document.getElementById("mute").style.boxShadow = "inset 4px 2px 1px grey";
-      jazzAudio.pause();
-      document.getElementById("volumeOn").style.opacity = "1";
-      document.getElementById("volumeOn").style.boxShadow = "4px 2px 1px grey";
-    }
-    else if (volumeOn == "1"){
-      document.getElementById("mute").style.opacity = "1";
-      document.getElementById("mute").style.boxShadow = "4px 2px 1px grey";
-      document.getElementById("volumeOn").style.boxShadow = "inset 4px 2px 1px grey";
-      document.getElementById("volumeOn").style.opacity = "0.5";
+    var mute = $('#mute').css('opacity');
+    var volumeOn = $('#volumeOn').css('opacity');
+    if (volumeOn == "1"){
+      selectModalButton($('#volumeOn'));
+      deselectModalButton($('#mute'));
       jazzAudio.play();
     }
     else {
-      document.getElementById("mute").style.opacity = "0.5";
-      document.getElementById("volumeOn").style.opacity = "1";
-      document.getElementById("mute").style.boxShadow = "inset 4px 2px 1px grey";
-      document.getElementById("volumeOn").style.boxShadow = "4px 2px 1px grey";
+      //mute == "1"
+      selectModalButton($('#mute'));
+      deselectModalButton($('#volumeOn'));
       jazzAudio.pause();
     }
   }
   /* exit the game page when click exit in setting */
   function exitGame(){
-    document.getElementById("exit").style.opacity = "0.5";
-    document.getElementById("exit").style.boxShadow = "inset 4px 2px 1px grey";
+    selectModalButton($('#exit'));
     window.location.assign("../start.html");
   }
