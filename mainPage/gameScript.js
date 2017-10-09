@@ -1,3 +1,7 @@
+//variable for card image theme
+var easyMode;
+var hardMode = false;
+
 /*    FLIP CARD VARIABLES   */
 
 var numCardMatched = 0;
@@ -48,6 +52,11 @@ function flipBack(card1, card2)
     $(card1).removeClass("disabledbutton");
     $(card2).removeClass("disabledbutton");
     enableUnflipped();
+
+    if (hardMode)
+    {
+      subtractTimer();
+    }
 
   } , 1000);
 }
@@ -103,7 +112,8 @@ $(document).ready(function() {
 //the start display width of progress bar
 var startWidth = 40;
 //in seconds
-var totalTime = 35;
+var totalTime = 60;
+var subtractTime = 2;
 //in milliseconds
 var checkInterval = 100;
 //how many times it checks per second
@@ -137,6 +147,12 @@ function startTimer()
 function stopTimer()
 {
   clearInterval(counter);
+}
+
+function subtractTimer()
+{
+  var subtractCount = subtractTime * checkCountPerSec;
+  count -= subtractCount;
 }
 
 /*    SOUND VARIABLES   */
@@ -181,6 +197,23 @@ function endGame()
   return;
 }
 
+function colorTimer()
+{
+    time = count/checkCountPerSec;
+    //half the time left
+    if (!halfway && (time < totalTime/2))
+    {
+      halfway=true;
+      $('#timer').css('background-color','orange');
+    }
+    //1/4 the time left
+    else if (!quarterway && (time < totalTime/4))
+    {
+      quarterway=true;
+      $('#timer').css('background-color','pink');
+    }
+}
+
 function timing()
 {
   count = count-1;
@@ -191,19 +224,7 @@ function timing()
     alert("you lose");
   }
 
-  time = count/checkCountPerSec;
-  //half the time left
-  if (!halfway && (time < totalTime/2))
-  {
-    halfway=true;
-    $('#timer').css('background-color','orange');
-  }
-  //1/4 the time left
-  else if (!quarterway && (time < totalTime/4))
-  {
-    quarterway=true;
-    $('#timer').css('background-color','pink');
-  }
+  colorTimer();
 
   //calculate and update the timer bar
   percent = count / checkCountPerSec * multi;
@@ -277,7 +298,7 @@ var cardsPlaced = [0, 0, 0, 0,
 
   function gamePageModal(){
     // Get the modal
-    var modal = document.getElementById('#modal');
+    var modal = document.getElementById('modal');
 
     // Get the button that opens the modal
     var btn = document.getElementById("popUpButton");
