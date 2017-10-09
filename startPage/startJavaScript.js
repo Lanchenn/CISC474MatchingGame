@@ -1,13 +1,13 @@
 function img1Clicked(){
-  var block2 = document.getElementById('secondb').style.opacity;
-  var block3 = document.getElementById('thirdb').style.opacity;
-  var block4 = document.getElementById('forthb').style.opacity;
+  var electronic = document.getElementById('secondb').style.opacity;
+  var animal = document.getElementById('thirdb').style.opacity;
+  var abstract = document.getElementById('forthb').style.opacity;
 
-  if(block2 == "1"){
+  if(electronic == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(block3 == "1"){
+  }else if(animal == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
-  }else if(block4 == "1"){
+  }else if(abstract == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("firstb").style.opacity = "1";
@@ -29,14 +29,14 @@ function img1Clicked(){
 }
 
 function img2Clicked(){
-  var block1 = document.getElementById('firstb').style.opacity;
-  var block3 = document.getElementById('thirdb').style.opacity;
-  var block4 = document.getElementById('forthb').style.opacity;
-  if(block1 == "1"){
+  var food = document.getElementById('firstb').style.opacity;
+  var animal = document.getElementById('thirdb').style.opacity;
+  var abstract = document.getElementById('forthb').style.opacity;
+  if(food == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(block3 == "1"){
+  }else if(animal == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
-  }else if(block4 == "1"){
+  }else if(abstract == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("secondb").style.opacity = "1";
@@ -53,14 +53,14 @@ function img2Clicked(){
   document.getElementById("button2").disabled = false;
 }
 function img3Clicked(){
-  var block1 = document.getElementById('firstb').style.opacity;
-  var block2 = document.getElementById('secondb').style.opacity;
-  var block4 = document.getElementById('forthb').style.opacity;
-  if(block1 == "1"){
+  var food = document.getElementById('firstb').style.opacity;
+  var electronic = document.getElementById('secondb').style.opacity;
+  var abstract = document.getElementById('forthb').style.opacity;
+  if(food == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(block2 == "1"){
+  }else if(electronic == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(block4 == "1"){
+  }else if(abstract == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("thirdb").style.opacity = "1";
@@ -77,14 +77,14 @@ function img3Clicked(){
   document.getElementById("button2").disabled = false;
 }
 function img4Clicked(){
-  var block1 = document.getElementById('firstb').style.opacity;
-  var block2 = document.getElementById('secondb').style.opacity;
-  var block3 = document.getElementById('thirdb').style.opacity;
-  if(block1 == "1"){
+  var food = document.getElementById('firstb').style.opacity;
+  var electronic = document.getElementById('secondb').style.opacity;
+  var animal = document.getElementById('thirdb').style.opacity;
+  if(food == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(block2 == "1"){
+  }else if(electronic == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(block3 == "1"){
+  }else if(animal == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
   }else{
     document.getElementById("forthb").style.opacity = "1";
@@ -101,23 +101,26 @@ function img4Clicked(){
   document.getElementById("button2").disabled = false;
 }
 
+
+
+
 function button1Clicked(){
-  var block1 = document.getElementById('firstb').style.opacity;
-  var block2 = document.getElementById('secondb').style.opacity;
-  var block3 = document.getElementById('thirdb').style.opacity;
-  var block4 = document.getElementById('forthb').style.opacity;
+  var food = document.getElementById('firstb').style.opacity;
+  var electronic = document.getElementById('secondb').style.opacity;
+  var animal = document.getElementById('thirdb').style.opacity;
+  var abstract = document.getElementById('forthb').style.opacity;
 
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
-  if(block1 == "1"){
+  if(food == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("mainPage/game.html");
-  }else if(block2 == "1"){
+  }else if(electronic == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy2/easy2.html");
-  }else if(block3 == "1"){
+  }else if(animal == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy3/easy3.html");
-  }else if(block4 == "1"){
+  }else if(abstract == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy4/easy4.html");
   }
@@ -125,21 +128,25 @@ function button1Clicked(){
 }
 
 function button2Clicked(){
-  var block1 = document.getElementById('firstb').style.opacity;
-  var block2 = document.getElementById('secondb').style.opacity;
-  var block3 = document.getElementById('thirdb').style.opacity;
-  var block4 = document.getElementById('forthb').style.opacity;
+  var food = document.getElementById('firstb').style.opacity;
+  var electronic = document.getElementById('secondb').style.opacity;
+  var animal = document.getElementById('thirdb').style.opacity;
+  var abstract = document.getElementById('forthb').style.opacity;
 
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
-  if(block1 == "1"){
+  if(food == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("hard1/hard1.html");
-  }else if(block2 == "1"){
-
-  }else if(block3 == "1"){
-
-  }else if(block4 == "1"){
-
+    window.location.assign("hard1/hard1.html?hardMode=true&theme=food");
+    //hardMode = true;
+  }else if(electronic == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("hard1/hard1.html?hardMode=true&theme=electronic");
+  }else if(animal == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("hard1/hard1.html?hardMode=true&theme=animal");
+  }else if(abstract == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("hard1/hard1.html?hardMode=true&theme=abstract");
   }
 
 }
