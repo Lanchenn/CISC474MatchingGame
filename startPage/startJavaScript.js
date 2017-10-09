@@ -1,8 +1,8 @@
-function my1(){
-
+function img1Clicked(){
   var haha = document.getElementById('secondb').style.opacity;
   var hehe = document.getElementById('thirdb').style.opacity;
   var hoho = document.getElementById('forthb').style.opacity;
+
   if(haha == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
   }else if(hehe == "1"){
@@ -14,10 +14,10 @@ function my1(){
     document.getElementById("firstb").style.filter = 'grayscale(0%)';
     document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
   }
+
   document.getElementById("firstb").style.opacity = "1";
   document.getElementById("firstb").style.filter = 'grayscale(0%)';
   document.getElementById("firstb").style.boxShadow = "5px 5px 5px gray";
-
 
   document.getElementById("button1").style.cursor = 'pointer';
   //document.getElementById("button1").onmouseover.style.cursor= "pointer";
@@ -28,7 +28,7 @@ function my1(){
   //retrun true;
 }
 
-function my2(){
+function img2Clicked(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('thirdb').style.opacity;
   var hoho = document.getElementById('forthb').style.opacity;
@@ -52,7 +52,7 @@ function my2(){
   document.getElementById("button2").style.cursor = 'pointer';
   document.getElementById("button2").disabled = false;
 }
-function my3(){
+function img3Clicked(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('secondb').style.opacity;
   var hoho = document.getElementById('forthb').style.opacity;
@@ -76,7 +76,7 @@ function my3(){
   document.getElementById("button2").style.cursor = 'pointer';
   document.getElementById("button2").disabled = false;
 }
-function my4(){
+function img4Clicked(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('secondb').style.opacity;
   var hoho = document.getElementById('thirdb').style.opacity;
@@ -101,7 +101,7 @@ function my4(){
   document.getElementById("button2").disabled = false;
 }
 
-function myFunction(){
+function buttonClicked(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('secondb').style.opacity;
   var hoho = document.getElementById('thirdb').style.opacity;
@@ -110,10 +110,6 @@ function myFunction(){
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
   if(haha == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    //document.getElementById("button1").style.cursor = 'not-allowed';
-    //document.getElementById("button1").onmouseover.style.cursor= "pointer";
-    //document.getElementById("button1").style.backgroundColor = '#da9289';
-    //document.getElementById("button1").disabled = false;
     window.location.assign("mainPage/game.html");
   }else if(hehe == "1"){
 
