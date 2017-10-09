@@ -167,7 +167,20 @@ function subtractTimer()
 
 var jazzAudio = new Audio("../sound/jazzyfrenchy.mp3");
 var cuteAudio = new Audio("../sound/cute.mp3");
+var backgroundMusic;
 var woosh = new Audio("../sound/woosh.wav");
+
+function setupMusic()
+{
+  if (hardMode) {
+    backgroundMusic = jazzAudio;
+  }
+  else {
+    backgroundMusic = cuteAudio;
+  }
+  backgroundMusic.play();
+  loopAudio(backgroundMusic);
+}
 
 function loopAudio(audio){
   audio.addEventListener('ended', function() {
@@ -200,7 +213,7 @@ function endGame()
   stopTimer();
   $('#timer').text("");
   $('#timer').css('width','0%');
-  jazzAudio.pause();
+  backgroundMusic.pause();
   disableUnflipped();
   gameOverPopup();
   return;
@@ -381,13 +394,13 @@ var cardsPlaced = [0, 0, 0, 0,
     if (volumeOn == "1"){
       selectModalButton($('#volumeOn'));
       deselectModalButton($('#mute'));
-      jazzAudio.play();
+      backgroundMusic.play();
     }
     else {
       //mute == "1"
       selectModalButton($('#mute'));
       deselectModalButton($('#volumeOn'));
-      jazzAudio.pause();
+      backgroundMusic.pause();
     }
   }
   /* exit the game page when click exit in setting */
