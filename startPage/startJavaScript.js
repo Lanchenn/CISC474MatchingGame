@@ -114,7 +114,7 @@ function myFunction(){
     //document.getElementById("button1").onmouseover.style.cursor= "pointer";
     //document.getElementById("button1").style.backgroundColor = '#da9289';
     //document.getElementById("button1").disabled = false;
-    window.location.assign("game.html");
+    window.location.assign("mainPage/game.html");
   }else if(hehe == "1"){
 
   }else if(hoho == "1"){
