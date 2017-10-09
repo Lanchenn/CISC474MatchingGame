@@ -9,6 +9,7 @@ var flippedOnce = false;
 var firstSRC;
 var secondSRC;
 var firstRef;
+var score = 0;
 
 function flipCard(cardSRC)
 {
@@ -88,11 +89,14 @@ $(document).ready(function() {
       {
         //it's a match
         numCardMatched += 2;
+        score += 10;
         enableUnflipped();
 
         if (numCardMatched == 12)
         {
-          alert("you win");
+          //alert("you win");
+          gameOverPopup();
+          stopTimer();
         }
       }
       else
