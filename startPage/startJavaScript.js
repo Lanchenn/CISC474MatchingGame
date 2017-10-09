@@ -1,13 +1,13 @@
 function img1Clicked(){
-  var haha = document.getElementById('secondb').style.opacity;
-  var hehe = document.getElementById('thirdb').style.opacity;
-  var hoho = document.getElementById('forthb').style.opacity;
+  var block2 = document.getElementById('secondb').style.opacity;
+  var block3 = document.getElementById('thirdb').style.opacity;
+  var block4 = document.getElementById('forthb').style.opacity;
 
-  if(haha == "1"){
+  if(block2 == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(hehe == "1"){
+  }else if(block3 == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
-  }else if(hoho == "1"){
+  }else if(block4 == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("firstb").style.opacity = "1";
@@ -29,14 +29,14 @@ function img1Clicked(){
 }
 
 function img2Clicked(){
-  var haha = document.getElementById('firstb').style.opacity;
-  var hehe = document.getElementById('thirdb').style.opacity;
-  var hoho = document.getElementById('forthb').style.opacity;
-  if(haha == "1"){
+  var block1 = document.getElementById('firstb').style.opacity;
+  var block3 = document.getElementById('thirdb').style.opacity;
+  var block4 = document.getElementById('forthb').style.opacity;
+  if(block1 == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(hehe == "1"){
+  }else if(block3 == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
-  }else if(hoho == "1"){
+  }else if(block4 == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("secondb").style.opacity = "1";
@@ -53,14 +53,14 @@ function img2Clicked(){
   document.getElementById("button2").disabled = false;
 }
 function img3Clicked(){
-  var haha = document.getElementById('firstb').style.opacity;
-  var hehe = document.getElementById('secondb').style.opacity;
-  var hoho = document.getElementById('forthb').style.opacity;
-  if(haha == "1"){
+  var block1 = document.getElementById('firstb').style.opacity;
+  var block2 = document.getElementById('secondb').style.opacity;
+  var block4 = document.getElementById('forthb').style.opacity;
+  if(block1 == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(hehe == "1"){
+  }else if(block2 == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(hoho == "1"){
+  }else if(block4 == "1"){
     document.getElementById("forthb").style.opacity = "0.5";
   }else{
     document.getElementById("thirdb").style.opacity = "1";
@@ -77,14 +77,14 @@ function img3Clicked(){
   document.getElementById("button2").disabled = false;
 }
 function img4Clicked(){
-  var haha = document.getElementById('firstb').style.opacity;
-  var hehe = document.getElementById('secondb').style.opacity;
-  var hoho = document.getElementById('thirdb').style.opacity;
-  if(haha == "1"){
+  var block1 = document.getElementById('firstb').style.opacity;
+  var block2 = document.getElementById('secondb').style.opacity;
+  var block3 = document.getElementById('thirdb').style.opacity;
+  if(block1 == "1"){
     document.getElementById("firstb").style.opacity = "0.5";
-  }else if(hehe == "1"){
+  }else if(block2 == "1"){
     document.getElementById("secondb").style.opacity = "0.5";
-  }else if(hoho == "1"){
+  }else if(block3 == "1"){
     document.getElementById("thirdb").style.opacity = "0.5";
   }else{
     document.getElementById("forthb").style.opacity = "1";
@@ -102,22 +102,22 @@ function img4Clicked(){
 }
 
 function button1Clicked(){
-  var haha = document.getElementById('firstb').style.opacity;
-  var hehe = document.getElementById('secondb').style.opacity;
-  var hoho = document.getElementById('thirdb').style.opacity;
-  var hihi = document.getElementById('forthb').style.opacity;
+  var block1 = document.getElementById('firstb').style.opacity;
+  var block2 = document.getElementById('secondb').style.opacity;
+  var block3 = document.getElementById('thirdb').style.opacity;
+  var block4 = document.getElementById('forthb').style.opacity;
 
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
-  if(haha == "1"){
+  if(block1 == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("mainPage/game.html");
-  }else if(hehe == "1"){
+  }else if(block2 == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy2/easy2.html");
-  }else if(hoho == "1"){
+  }else if(block3 == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy3/easy3.html");
-  }else if(hihi == "1"){
+  }else if(block4 == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("easy4/easy4.html");
   }
@@ -125,20 +125,20 @@ function button1Clicked(){
 }
 
 function button2Clicked(){
-  var haha = document.getElementById('firstb').style.opacity;
-  var hehe = document.getElementById('secondb').style.opacity;
-  var hoho = document.getElementById('thirdb').style.opacity;
-  var hihi = document.getElementById('forthb').style.opacity;
+  var block1 = document.getElementById('firstb').style.opacity;
+  var block2 = document.getElementById('secondb').style.opacity;
+  var block3 = document.getElementById('thirdb').style.opacity;
+  var block4 = document.getElementById('forthb').style.opacity;
 
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
-  if(haha == "1"){
+  if(block1 == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("hard1/hard1.html");
-  }else if(hehe == "1"){
+  }else if(block2 == "1"){
 
-  }else if(hoho == "1"){
+  }else if(block3 == "1"){
 
-  }else if(hihi == "1"){
+  }else if(block4 == "1"){
 
   }
 
