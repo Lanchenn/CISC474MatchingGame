@@ -20,26 +20,26 @@ function flipCard(cardSRC)
 }
 
 function disableUnflipped() {
+  //makes unflipped cards unclickable
   $('.img-responsive').each(function(i, obj) {
     if ($(this).attr("src") == "../images/Icon/spacer.jpg") {
       $(this).addClass("disabledbutton");
-      console.log('disable');
     }
   });
 }
 
 function enableUnflipped() {
+  //makes unflipped cards clickable
   $('.img-responsive').each(function(i, obj) {
     if ($(this).attr("src") == "../images/Icon/spacer.jpg") {
       $(this).removeClass("disabledbutton");
-      console.log('enable');
     }
   });
 }
 
 function flipBack(card1, card2)
 {
-  console.log("flip back");
+  //flips the two cards
   setTimeout( function() {
     flipCard($(card1));
     flipCard($(card2));
@@ -56,10 +56,9 @@ $(document).ready(function() {
 
   $('.card').click(function() {
 
-    // //do this right away in case there is a delay. don't want the user to be able to use the delay to click a 3rd card.
     if (!flippedOnce)
     {
-      console.log("flipped first");
+      //flipped first card
       firstSRC = $(this).children("div.back").children("img").attr("src");
       firstRef = $(this);
       flipCard($(this));
@@ -69,6 +68,7 @@ $(document).ready(function() {
     }
     else
     {
+      //flipped second card
       secondSRC = $(this).children("div.back").children("img").attr("src");
 
       flipCard($(this));
@@ -77,20 +77,24 @@ $(document).ready(function() {
 
       if (firstSRC == secondSRC)
       {
-        console.log("it's a match and they are different cards");
+        //it's a match
         numCardMatched += 2;
         enableUnflipped();
+
+        if (numCardMatched == 12)
+        {
+          alert("you win");
+        }
       }
       else
       {
-        console.log("not a match");
+        //not a match
         flipBack(this, firstRef);
       }
 
       //ready for next flip attempt
       flippedOnce = false;
     }
-
   })
 });
 
@@ -102,6 +106,7 @@ var startWidth = 40;
 var totalTime = 35;
 //in milliseconds
 var checkInterval = 100;
+//how many times it checks per second
 var checkCountPerSec = 1000/checkInterval;
 
 //multiplier to determine new display width
@@ -140,18 +145,27 @@ var jazzAudio = new Audio("../sound/jazzyfrenchy.mp3");
 var cuteAudio = new Audio("../sound/cute.mp3");
 var woosh = new Audio("../sound/woosh.wav");
 
+function loopAudio(audio){
+  audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+}
+
 function pausePlay()
 {
   if (paused)
   {
     startTimer();
     paused = false;
+    enableUnflipped();
     $('#pausePlayBtn').attr('src', '../images/Icon/pauseBtn.png');
   }
   else
   {
     stopTimer();
     paused = true;
+    disableUnflipped();
     $('#pausePlayBtn').attr('src', '../images/Icon/playBtn.png');
   }
 }
@@ -163,28 +177,35 @@ function endGame()
   $('#timer').text("");
   $('#timer').css('width','0%');
   jazzAudio.pause();
+  disableUnflipped();
   return;
 }
 
 function timing()
 {
   count = count-1;
+  //time runs out
   if (count <= 0)
   {
     endGame();
+    alert("you lose");
   }
+
   time = count/checkCountPerSec;
+  //half the time left
   if (!halfway && (time < totalTime/2))
   {
     halfway=true;
     $('#timer').css('background-color','orange');
   }
+  //1/4 the time left
   else if (!quarterway && (time < totalTime/4))
   {
     quarterway=true;
     $('#timer').css('background-color','pink');
   }
 
+  //calculate and update the timer bar
   percent = count / checkCountPerSec * multi;
   $('#timer').css('width',percent+'%');
   text = Math.round(count/checkCountPerSec) + 's';
@@ -205,74 +226,49 @@ var imgCounts = [0, 0, 0, 0, 0, 0];
 var cardsPlaced = [0, 0, 0, 0,
   0, 0, 0, 0,
   0, 0, 0, 0];
-  function displayImage(){
+
+  function displayImage()
+  {
     var cardToPlace1;
     var cardToPlace2;
     // while any of the images hasn't been placed on the board
     var success = false;
 
     while((imgCounts[0]==0) || (imgCounts[1]==0) || (imgCounts[2]==0) ||
-    (imgCounts[3]==0) || (imgCounts[4]==0) || (imgCounts[5]==0) ){
-      // alert("imgCounts arrayTop: " + imgCounts[0]+imgCounts[1]+imgCounts[2]+imgCounts[3]+imgCounts[4]+imgCounts[5]);
-      // alert("cardsPlaced arrayTop: " + cardsPlaced[0]+cardsPlaced[1]+cardsPlaced[2]+cardsPlaced[3]+cardsPlaced[4]+cardsPlaced[5]+cardsPlaced[6]+cardsPlaced[7]+cardsPlaced[8]+cardsPlaced[9]+cardsPlaced[10]+cardsPlaced[11]);
-
+    (imgCounts[3]==0) || (imgCounts[4]==0) || (imgCounts[5]==0) )
+    {
       success=false;
-      // alert("in outermost while loop");
 
       do{
         cardToPlace1 = Math.floor(Math.random() * (12));
       }while(cardsPlaced[cardToPlace1]!=0);
-      // alert("cardToPlace1: " + cardToPlace1);
 
       var canvas1 = "canvas";
-
       var name1 = canvas1.concat(cardToPlace1.toString());
-      // alert("name1: "+name1);
-
 
       do{
         cardToPlace2 = Math.floor(Math.random() * (12));
       }while((cardsPlaced[cardToPlace2]!=0) || (cardToPlace2 == cardToPlace1));
 
-      // alert("cardToPlace2: " + cardToPlace2);
-
       var canvas2 = "canvas";
-
       var name2 = canvas2.concat(cardToPlace2.toString());
-      // alert("name2: "+name2);
-
-      // alert("about to enter do/while loop");
 
       do{
-        // alert("in do/while loop");
-
-
         // randomly generate a number between zero and imagesArray.length
         var i = Math.floor(Math.random() * (imagesArray.length));
-        // alert("var i = "+i)
-        // alert("imgCounts[i] = "+imgCounts[i]);
 
         //check if that image has not yet been listed as placed (i.e. imgCounts[i] == 0)
         if(imgCounts[i] == 0){
-          // alert("imgCounts[i]==0. Now in if statement");
-          // alert("name1 = "+name1);
           document.getElementById(name1).src = imagesArray[i];
-          // alert("here1");
           document.getElementById(name2).src = imagesArray[i];
-          // alert("here2");
           imgCounts[i]=1;
-          // alert("imgCounts["+i+"] = "+ imgCounts[i]);
           success = true;
-          // alert("here3");
         }
 
       }while(!success);
 
       cardsPlaced[cardToPlace1]=1;
       cardsPlaced[cardToPlace2]=1;
-
-      // alert("imgCounts arrayBottom: " + imgCounts[0]+imgCounts[1]+imgCounts[2]+imgCounts[3]+imgCounts[4]+imgCounts[5]);
-      // alert("cardsPlaced arrayBottom: " + cardsPlaced[0]+cardsPlaced[1]+cardsPlaced[2]+cardsPlaced[3]+cardsPlaced[4]+cardsPlaced[5]+cardsPlaced[6]+cardsPlaced[7]+cardsPlaced[8]+cardsPlaced[9]+cardsPlaced[10]+cardsPlaced[11]);
     }
   }
 
@@ -291,7 +287,6 @@ var cardsPlaced = [0, 0, 0, 0,
 
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
-      console.log(modal);
       modal.style.display = "block";
       stopTimer();
     }
