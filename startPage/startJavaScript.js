@@ -101,7 +101,7 @@ function img4Clicked(){
   document.getElementById("button2").disabled = false;
 }
 
-function buttonClicked(){
+function button1Clicked(){
   var haha = document.getElementById('firstb').style.opacity;
   var hehe = document.getElementById('secondb').style.opacity;
   var hoho = document.getElementById('thirdb').style.opacity;
@@ -111,6 +111,26 @@ function buttonClicked(){
   if(haha == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
     window.location.assign("mainPage/game.html");
+  }else if(hehe == "1"){
+
+  }else if(hoho == "1"){
+
+  }else if(hihi == "1"){
+
+  }
+
+}
+
+function button2Clicked(){
+  var haha = document.getElementById('firstb').style.opacity;
+  var hehe = document.getElementById('secondb').style.opacity;
+  var hoho = document.getElementById('thirdb').style.opacity;
+  var hihi = document.getElementById('forthb').style.opacity;
+
+  //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
+  if(haha == "1"){
+    document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("hard1/hard1.html");
   }else if(hehe == "1"){
 
   }else if(hoho == "1"){
