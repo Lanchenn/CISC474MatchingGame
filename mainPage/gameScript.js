@@ -120,7 +120,7 @@ $(document).ready(function() {
 //the start display width of progress bar
 var startWidth = 40;
 //in seconds
-var totalTime = 10;
+var totalTime = 60;
 var subtractTime = 2;
 //in milliseconds
 var checkInterval = 100;
@@ -318,30 +318,28 @@ var cardsPlaced = [0, 0, 0, 0,
   // the popup window for game over
   function gameOverPopup(){
     var modalGameOver = document.getElementById('modalGameOver');
+    var rePlay = document.getElementById("replayBtn");
     var img = document.querySelectorAll("img")[0];
 
     modalGameOver.style.display = "block";
     $("#score").html("Final score: " + finalScore);
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modalGameOver) {
+    // When the user clicks button replay, close it
+    rePlay.onclick = function() {
         window.location.assign("../start.html");
-      }
     }
   }
 
   // the popup window for game win
   function gameWinPopup(){
     var modalGameWin = document.getElementById('modalGameWin');
+    var rePlay = document.getElementById("replayBtnWin");
     var img = document.querySelectorAll("img")[0];
 
     modalGameWin.style.display = "block";
     $("#scoreWin").html("Final score: " + finalScore);
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modalGameWin) {
+    // When the user clicks button replay, close it
+    rePlay.onclick = function() {
         window.location.assign("../start.html");
-      }
     }
   }
 

@@ -301,6 +301,7 @@
 
 #gameOverImg {
 	position: relative;
+	float: center;
 	margin-left: 20%;
 	max-height: 100%;
 	max-width: 100%;
@@ -315,4 +316,98 @@
 	max-width: 100%;
 	height: 300px;
 	width: auto;
+}
+
+#replayBtn{
+	border-radius: 4px;
+  background-color: #e6b6b0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  margin: 5px;
+	margin-left: 40%;
+}
+
+#replayBtn:hover {
+	background-color: #da9289;
+}
+
+#replayBtn span {
+  /*cursor: pointer;*/
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  /*cursor:not-allowed;*/
+}
+#replayBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#replayBtn:hover span {
+  padding-right: 25px;
+  /*background-color: #da9289;*/
+}
+#replayBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#replayBtn:active {
+  background-color: #da9289;
+  box-shadow: 0 10px #666;
+  transform: translateY(8px);
+}
+
+#replayBtnWin{
+	border-radius: 4px;
+  background-color: #e6b6b0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  margin: 5px;
+	margin-left: 40%;
+}
+
+#replayBtnWin:hover {
+	background-color: #da9289;
+}
+
+#replayBtnWin span {
+  /*cursor: pointer;*/
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  /*cursor:not-allowed;*/
+}
+#replayBtnWin span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#replayBtnWin:hover span {
+  padding-right: 25px;
+  /*background-color: #da9289;*/
+}
+#replayBtnWin:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#replayBtnWin:active {
+  background-color: #da9289;
+  box-shadow: 0 10px #666;
+  transform: translateY(8px);
 }
