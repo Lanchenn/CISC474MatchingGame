@@ -291,9 +291,28 @@
 
 #scoreWin {
 	position: relative;
-  color: #f5eeee;
-	font-family: 'Nosifer', cursive;
-  font-size: 35px;
+	color: #0d54c5;
+	text-shadow: 8px 7px 10px gold;
+	font-family: 'Nova Flat', cursive;
+  font-size: 50px;
   margin: 40px 0;
   text-align: center;
+}
+
+#gameOverImg {
+	position: relative;
+	margin-left: 20%;
+	max-height: 100%;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+
+#gameWinImg{
+	position: relative;
+	margin-left: 21%;
+	max-height: 100%;
+	max-width: 100%;
+	height: 300px;
+	width: auto;
 }

@@ -120,7 +120,7 @@ $(document).ready(function() {
 //the start display width of progress bar
 var startWidth = 40;
 //in seconds
-var totalTime = 60;
+var totalTime = 10;
 var subtractTime = 2;
 //in milliseconds
 var checkInterval = 100;
