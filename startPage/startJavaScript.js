@@ -1,3 +1,4 @@
+/* Functions for image click*/
 function img1Clicked(){
   var electronic = document.getElementById('secondb').style.opacity;
   var animal = document.getElementById('thirdb').style.opacity;
@@ -52,6 +53,7 @@ function img2Clicked(){
   document.getElementById("button2").style.cursor = 'pointer';
   document.getElementById("button2").disabled = false;
 }
+
 function img3Clicked(){
   var food = document.getElementById('firstb').style.opacity;
   var electronic = document.getElementById('secondb').style.opacity;
@@ -76,6 +78,7 @@ function img3Clicked(){
   document.getElementById("button2").style.cursor = 'pointer';
   document.getElementById("button2").disabled = false;
 }
+
 function img4Clicked(){
   var food = document.getElementById('firstb').style.opacity;
   var electronic = document.getElementById('secondb').style.opacity;
@@ -102,8 +105,7 @@ function img4Clicked(){
 }
 
 
-
-
+/*functions for button click*/
 function button1Clicked(){
   var food = document.getElementById('firstb').style.opacity;
   var electronic = document.getElementById('secondb').style.opacity;
@@ -112,17 +114,24 @@ function button1Clicked(){
 
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
   if(food == "1"){
-    document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("mainPage/game.html");
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //window.location.assign("mainPage/game.html");document.getElementById("button1").style.backgroundColor = '#da9289';
+    window.location.assign("mainPage/game.html?theme=food");
   }else if(electronic == "1"){
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //window.location.assign("easy2/easy2.html");
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("easy2/easy2.html");
+    window.location.assign("mainPage/game.html?theme=electronic");
   }else if(animal == "1"){
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //window.location.assign("easy3/easy3.html");
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("easy3/easy3.html");
+    window.location.assign("mainPage/game.html?theme=animal");
   }else if(abstract == "1"){
+    //document.getElementById("button1").style.backgroundColor = '#da9289';
+    //window.location.assign("easy4/easy4.html");
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("easy4/easy4.html");
+    window.location.assign("mainPage/game.html?theme=abstract");
   }
 
 }
@@ -136,17 +145,17 @@ function button2Clicked(){
   //if((haha == "1")||(hehe == "1")||(hoho == "1")||(hihi == "1")){
   if(food == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("hard1/hard1.html?hardMode=true&theme=food");
+    window.location.assign("mainPage/game.html?hardMode=true&theme=food");
     //hardMode = true;
   }else if(electronic == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("hard1/hard1.html?hardMode=true&theme=electronic");
+    window.location.assign("mainPage/game.html?hardMode=true&theme=electronic");
   }else if(animal == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("hard1/hard1.html?hardMode=true&theme=animal");
+    window.location.assign("mainPage/game.html?hardMode=true&theme=animal");
   }else if(abstract == "1"){
     document.getElementById("button1").style.backgroundColor = '#da9289';
-    window.location.assign("hard1/hard1.html?hardMode=true&theme=abstract");
+    window.location.assign("mainPage/game.html?hardMode=true&theme=abstract");
   }
 
 }

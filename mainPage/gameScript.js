@@ -1,6 +1,8 @@
 //variable for card image theme
 var easyMode;
-var hardMode = false;
+var qs = new URLSearchParams(window.location.search);
+var hardMode = qs.get("hardMode");
+var theme = qs.get("theme");
 
 /*    FLIP CARD VARIABLES   */
 
@@ -256,13 +258,35 @@ function timing()
 }
 
 /*    CARD IMAGE VARIABLES   */
-
-var imagesArray = ["../images/food/cupcake.png",
+var foodArray = ["../images/food/chicken-leg.png",
 "../images/food/steak.png",
-"../images/food/noodles.png",
-"../images/food/chicken-leg.png",
-"../images/food/croissant.png",
-"../images/food/fried-eggs.png"];
+"../images/food/pizza-slice.png",
+"../images/food/mushroom.png",
+"../images/food/shiny-apple.png",
+"../images/food/pretzel.png"];
+
+var electronicArray = ["../images/electronic/computing.png",
+"../images/electronic/cctv-camera.png",
+"../images/electronic/film-projector.png",
+"../images/electronic/gamepad.png",
+"../images/electronic/mouse.png",
+"../images/electronic/smartphone.png"];
+
+var animalArray = ["../images/animals/dolphin.png",
+"../images/animals/elephant.png",
+"../images/animals/feline.png",
+"../images/animals/pig.png",
+"../images/animals/snail.png",
+"../images/animals/sheep.png"];
+
+var abstractArray = ["../images/abstract/abstract_1.png",
+"../images/abstract/abstract_2.png",
+"../images/abstract/abstract_3.png",
+"../images/abstract/abstract_4.png",
+"../images/abstract/abstract_5.png",
+"../images/abstract/abstract_6.png"];
+
+var imagesArray;
 
 var imgCounts = [0, 0, 0, 0, 0, 0];
 
@@ -272,6 +296,16 @@ var cardsPlaced = [0, 0, 0, 0,
 
   function displayImage()
   {
+    if(theme == "food"){
+      imagesArray = foodArray;
+    }else if(theme == "electronic"){
+      imagesArray = electronicArray;
+    }else if(theme == "animal"){
+      imagesArray = animalArray;
+    }else if(theme == "abstract"){
+      imagesArray = abstractArray;
+    }
+
     var cardToPlace1;
     var cardToPlace2;
     // while any of the images hasn't been placed on the board
