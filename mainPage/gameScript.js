@@ -31,7 +31,7 @@ function flipCard(cardSRC)
 function disableUnflipped() {
   //makes unflipped cards unclickable
   $('.img-responsive').each(function(i, obj) {
-    if ($(this).attr("src") == "../images/Icon/spacer.jpg") {
+    if ($(this).attr("src") == "../images/Icon/spacer.gif") {
       $(this).addClass("disabledbutton");
     }
   });
@@ -40,7 +40,7 @@ function disableUnflipped() {
 function enableUnflipped() {
   //makes unflipped cards clickable
   $('.img-responsive').each(function(i, obj) {
-    if ($(this).attr("src") == "../images/Icon/spacer.jpg") {
+    if ($(this).attr("src") == "../images/Icon/spacer.gif") {
       $(this).removeClass("disabledbutton");
     }
   });
