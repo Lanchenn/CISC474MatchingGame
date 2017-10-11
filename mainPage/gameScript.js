@@ -96,7 +96,7 @@ $(document).ready(function() {
         score += 10;
         enableUnflipped();
 
-        if (numCardMatched == 2)
+        if (numCardMatched == 12)
         {
           //alert("you win");
           stopTimer();
@@ -123,7 +123,7 @@ $(document).ready(function() {
 var startWidth = 40;
 //in seconds
 var totalTime = 60;
-var subtractTime = 2;
+var subtractTime = 3;
 //in milliseconds
 var checkInterval = 100;
 //how many times it checks per second
