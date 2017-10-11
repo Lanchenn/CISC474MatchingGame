@@ -36,7 +36,7 @@
 }
 #topMenu{
   height: 8vh;
-  background-color: aqua;
+  background-color: #a195ce;
   padding-right: 2vh;
 }
 #settingsWheelBtn{
@@ -108,6 +108,7 @@
   background: grey;
   width: 100%;
 	background-image: url("../images/background/lightwooden.jpeg");
+	/*background-color: #a7dea7;*/
 }
 .card {
     width: 100%;
